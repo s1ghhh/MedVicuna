@@ -41,5 +41,5 @@ torchrun --nproc_per_node=4 --master_port=20001 fastchat/train/train_mem.py \
     --model_max_length 1024 \
     --gradient_checkpointing True \
     --lazy_preprocess True\
-    --deepspeed "./configs/default_offload_opt_param_offload.json"\
+    --deepspeed "./configs/default_offload_opt_param.json"\
     --tf32 True &>>"./vicuna_13b.log"
