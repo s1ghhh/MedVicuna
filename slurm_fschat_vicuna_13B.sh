@@ -7,14 +7,16 @@
 #SBATCH --mem=200G             
 #SBATCH --gres=gpu:4            
 #SBATCH --cpus-per-task=24
-#SBATCH --exclusive
+
 
 
 source /home/hongyiwa/.bashrc   # 此处需要更改或注释掉
 
 nvidia-smi
 
-cd /l/users/hongyiwa/guoheng.sun/FastChat  # 此处需要更改为项目根目录
+cd /l/users/hongyiwa/guoheng.sun/MedVicuna  # 此处需要更改为项目根目录
+
+wget https://huggingface.co/datasets/s1ghhh/MedVicuna/resolve/main/medVicuna.json  # 下载数据集
 
 conda activate fschat   # 此处需要更改
 
@@ -22,7 +24,7 @@ export WANDB_MODE=offline  # 避免卡住，可以手动上传
 
 torchrun --nproc_per_node=4 --master_port=20001 fastchat/train/train_mem.py \
     --model_name_or_path eachadea/vicuna-13b-1.1  \
-    --data_path s1ghhh/MedVicuna \
+    --data_path ./medVicuna.json \
     --bf16 True \
     --output_dir output_vicuna_13b/ \
     --num_train_epochs 3 \
