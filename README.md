@@ -26,4 +26,3 @@
   * 如果存储空间不足，则将```/home/.conda/envs/fschat/lib/python3.10/site-packages/transformers/trainer.py```中line 2349-2352的```self.deepspeed.save_checkpoint(output_dir)```注释，避免保存优化器状态。
 
 
-## !!!数据集还未处理完，老师们先试试环境
