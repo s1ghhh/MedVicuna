@@ -23,7 +23,7 @@ conda activate fschat   # 此处需要更改
 export WANDB_MODE=offline  # 避免卡住，可以手动上传
 
 torchrun --nproc_per_node=4 --master_port=20001 fastchat/train/train_mem.py \
-    --model_name_or_path eachadea/vicuna-13b-1.1  \
+    --model_name_or_path TheBloke/Wizard-Vicuna-13B-Uncensored-HF  \
     --data_path ./medVicuna.json \
     --bf16 True \
     --output_dir output_vicuna_13b/ \
