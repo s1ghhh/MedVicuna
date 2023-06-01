@@ -19,7 +19,7 @@
   - ```pip install deepspeed```
   - https://github.com/microsoft/DeepSpeed/issues/3145
 
-* 直接创建conda环境
+* 或者直接创建conda环境
   - 修改```./fschat.yml```中的```name```与```prefix```
   - ```conda env create -f fschat.yml```
 
