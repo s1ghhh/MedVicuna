@@ -3,18 +3,18 @@
 #SBATCH --job-name=test    
 #SBATCH --partition=long  
 #SBATCH --nodes=2
-#SBATCH --output=/l/users/hongyiwa/guoheng.sun/fs_vicuna_%j.out
-#SBATCH --mem=100G             
+#SBATCH --output=/l/users/hongyiwa/guoheng.sun/medvicuna_%j.out  ######
+#SBATCH --mem=200G             
 #SBATCH --gres=gpu:4            
 #SBATCH --cpus-per-task=12
 
 
 
-source /home/hongyiwa/.bashrc
+source /home/hongyiwa/.bashrc     ######
 
 nvidia-smi
 
-cd /l/users/hongyiwa/guoheng.sun/MedVicuna
+cd /l/users/hongyiwa/guoheng.sun/MedVicuna     ######
 
 wget https://huggingface.co/datasets/s1ghhh/MedVicuna/resolve/main/medVicuna.json
 
@@ -37,7 +37,7 @@ srun torchrun \
     --rdzv_backend c10d \
     --rdzv_endpoint $head_node_ip:20001 \
     fastchat/train/train_mem.py \
-    --model_name_or_path /l/users/hongyiwa/guoheng.sun/fastchat/vicuna_data/vicuna-7b-v1.1  \
+    --model_name_or_path eachadea/vicuna-13b-1.1  \
     --data_path ./medVicuna.json \
     --bf16 True \
     --output_dir output_medvicuna_13b/ \
