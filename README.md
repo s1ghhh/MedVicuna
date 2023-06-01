@@ -25,10 +25,8 @@
 
 ## Slurm
 
-  - 修改```./slurm_fschat_vicuna_13B.sh```中的必要信息
-  - ```sbatch ./slurm_fschat_vicuna_13B.sh```提交
-  - ```./slurm_fschat_vicuna_13B.sh```默认使用deepspeed zero stage 3，如果OOM，则```sbatch ./slurm_fschat_vicuna_13B_offload.sh```
-
+  - 修改```./run_medvicuna_13b.sh```中的必要信息
+  - ```sbatch ./run_medvicuna_13b.sh```提交
 
 ## 存储需求
   * deepspeed存ckpt时会存各个gpu的优化器状态，占用空间很大，目前的设置需要600G存储
