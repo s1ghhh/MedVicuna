@@ -1,0 +1,1323 @@
+Setting ds_accelerator to cuda (auto detect)
+[2023-06-03 05:51:16,803] [INFO] [multinode_runner.py:70:get_cmd] Running on the following workers: Ai4bio-alpa2,Ai4bio-alpa3
+[2023-06-03 05:51:16,804] [INFO] [runner.py:555:main] cmd = pdsh -S -f 1024 -w Ai4bio-alpa2,Ai4bio-alpa3 export PYTHONPATH=/home/chong.tian/code/MedVicuna;  cd /home/chong.tian/code/MedVicuna; /home/chong.tian/.conda/envs/med/bin/python -u -m deepspeed.launcher.launch --world_info=eyJBaTRiaW8tYWxwYTIiOiBbMCwgMSwgMiwgM10sICJBaTRiaW8tYWxwYTMiOiBbMCwgMSwgMiwgM119 --node_rank=%n --master_addr=Ai4bio-alpa2 --master_port=20002 fastchat/train/train_mem.py --model_name_or_path 'eachadea/vicuna-13b-1.1' --data_path './medVicuna.json' --bf16 'True' --output_dir 'output_medvicuna_13b/' --num_train_epochs '5' --per_device_train_batch_size '1' --per_device_eval_batch_size '32' --gradient_accumulation_steps '32' --save_strategy 'epoch' --save_total_limit '10' --learning_rate '2e-5' --weight_decay '0.' --warmup_ratio '0.04' --lr_scheduler_type 'cosine' --logging_steps '1' --model_max_length '1024' --gradient_checkpointing 'True' --lazy_preprocess 'True' --deepspeed './configs/default_offload_opt_param.json' --tf32 'True'
+Ai4bio-alpa2: Setting ds_accelerator to cuda (auto detect)
+Ai4bio-alpa3: Setting ds_accelerator to cuda (auto detect)
+Ai4bio-alpa2: [2023-06-03 05:51:19,515] [INFO] [launch.py:145:main] WORLD INFO DICT: {'Ai4bio-alpa2': [0, 1, 2, 3], 'Ai4bio-alpa3': [0, 1, 2, 3]}
+Ai4bio-alpa2: [2023-06-03 05:51:19,515] [INFO] [launch.py:151:main] nnodes=2, num_local_procs=4, node_rank=0
+Ai4bio-alpa2: [2023-06-03 05:51:19,515] [INFO] [launch.py:162:main] global_rank_mapping=defaultdict(<class 'list'>, {'Ai4bio-alpa2': [0, 1, 2, 3], 'Ai4bio-alpa3': [4, 5, 6, 7]})
+Ai4bio-alpa2: [2023-06-03 05:51:19,515] [INFO] [launch.py:163:main] dist_world_size=8
+Ai4bio-alpa2: [2023-06-03 05:51:19,515] [INFO] [launch.py:165:main] Setting CUDA_VISIBLE_DEVICES=0,1,2,3
+Ai4bio-alpa2: ------------------------------------
+Ai4bio-alpa2: 
+Ai4bio-alpa2: ['/home/chong.tian/code/MedVicuna', '/home/chong.tian/code/MedVicuna/fastchat/train', '/home/chong.tian/code/MedVicuna', '/home/chong.tian/.conda/envs/med/lib/python310.zip', '/home/chong.tian/.conda/envs/med/lib/python3.10', '/home/chong.tian/.conda/envs/med/lib/python3.10/lib-dynload', '/home/chong.tian/.conda/envs/med/lib/python3.10/site-packages']['/home/chong.tian/code/MedVicuna', '/home/chong.tian/code/MedVicuna/fastchat/train', '/home/chong.tian/code/MedVicuna', '/home/chong.tian/.conda/envs/med/lib/python310.zip', '/home/chong.tian/.conda/envs/med/lib/python3.10', '/home/chong.tian/.conda/envs/med/lib/python3.10/lib-dynload', '/home/chong.tian/.conda/envs/med/lib/python3.10/site-packages']
+Ai4bio-alpa2: 
+Ai4bio-alpa2: ------------------
+Ai4bio-alpa2: ['/home/chong.tian/code/MedVicuna', '/home/chong.tian/code/MedVicuna/fastchat/train', '/home/chong.tian/code/MedVicuna', '/home/chong.tian/.conda/envs/med/lib/python310.zip', '/home/chong.tian/.conda/envs/med/lib/python3.10', '/home/chong.tian/.conda/envs/med/lib/python3.10/lib-dynload', '/home/chong.tian/.conda/envs/med/lib/python3.10/site-packages']
+Ai4bio-alpa2: ------------------
+Ai4bio-alpa2: ['/home/chong.tian/code/MedVicuna', '/home/chong.tian/code/MedVicuna/fastchat/train', '/home/chong.tian/code/MedVicuna', '/home/chong.tian/.conda/envs/med/lib/python310.zip', '/home/chong.tian/.conda/envs/med/lib/python3.10', '/home/chong.tian/.conda/envs/med/lib/python3.10/lib-dynload', '/home/chong.tian/.conda/envs/med/lib/python3.10/site-packages']
+Ai4bio-alpa2: Setting ds_accelerator to cuda (auto detect)
+Ai4bio-alpa2: Setting ds_accelerator to cuda (auto detect)
+Ai4bio-alpa2: Setting ds_accelerator to cuda (auto detect)
+Ai4bio-alpa2: Setting ds_accelerator to cuda (auto detect)
+Ai4bio-alpa3: [2023-06-03 05:51:22,534] [INFO] [launch.py:145:main] WORLD INFO DICT: {'Ai4bio-alpa2': [0, 1, 2, 3], 'Ai4bio-alpa3': [0, 1, 2, 3]}
+Ai4bio-alpa3: [2023-06-03 05:51:22,534] [INFO] [launch.py:151:main] nnodes=2, num_local_procs=4, node_rank=1
+Ai4bio-alpa3: [2023-06-03 05:51:22,534] [INFO] [launch.py:162:main] global_rank_mapping=defaultdict(<class 'list'>, {'Ai4bio-alpa2': [0, 1, 2, 3], 'Ai4bio-alpa3': [4, 5, 6, 7]})
+Ai4bio-alpa3: [2023-06-03 05:51:22,534] [INFO] [launch.py:163:main] dist_world_size=8
+Ai4bio-alpa3: [2023-06-03 05:51:22,534] [INFO] [launch.py:165:main] Setting CUDA_VISIBLE_DEVICES=0,1,2,3
+Ai4bio-alpa3: ------------------
+Ai4bio-alpa3: ['/home/chong.tian/code/MedVicuna', '/home/chong.tian/code/MedVicuna/fastchat/train', '/home/chong.tian/code/MedVicuna', '/home/chong.tian/.conda/envs/med/lib/python310.zip', '/home/chong.tian/.conda/envs/med/lib/python3.10', '/home/chong.tian/.conda/envs/med/lib/python3.10/lib-dynload', '/home/chong.tian/.conda/envs/med/lib/python3.10/site-packages']
+Ai4bio-alpa3: ------------------
+Ai4bio-alpa3: ['/home/chong.tian/code/MedVicuna', '/home/chong.tian/code/MedVicuna/fastchat/train', '/home/chong.tian/code/MedVicuna', '/home/chong.tian/.conda/envs/med/lib/python310.zip', '/home/chong.tian/.conda/envs/med/lib/python3.10', '/home/chong.tian/.conda/envs/med/lib/python3.10/lib-dynload', '/home/chong.tian/.conda/envs/med/lib/python3.10/site-packages']
+Ai4bio-alpa3: ------------------
+Ai4bio-alpa3: ['/home/chong.tian/code/MedVicuna', '/home/chong.tian/code/MedVicuna/fastchat/train', '/home/chong.tian/code/MedVicuna', '/home/chong.tian/.conda/envs/med/lib/python310.zip', '/home/chong.tian/.conda/envs/med/lib/python3.10', '/home/chong.tian/.conda/envs/med/lib/python3.10/lib-dynload', '/home/chong.tian/.conda/envs/med/lib/python3.10/site-packages']
+Ai4bio-alpa3: ------------------
+Ai4bio-alpa3: ['/home/chong.tian/code/MedVicuna', '/home/chong.tian/code/MedVicuna/fastchat/train', '/home/chong.tian/code/MedVicuna', '/home/chong.tian/.conda/envs/med/lib/python310.zip', '/home/chong.tian/.conda/envs/med/lib/python3.10', '/home/chong.tian/.conda/envs/med/lib/python3.10/lib-dynload', '/home/chong.tian/.conda/envs/med/lib/python3.10/site-packages']
+Ai4bio-alpa2: [2023-06-03 05:51:23,041] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+Ai4bio-alpa2: [2023-06-03 05:51:23,041] [INFO] [comm.py:594:init_distributed] cdb=None
+Ai4bio-alpa2: [2023-06-03 05:51:23,044] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+Ai4bio-alpa2: [2023-06-03 05:51:23,044] [INFO] [comm.py:594:init_distributed] cdb=None
+Ai4bio-alpa2: [2023-06-03 05:51:23,049] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+Ai4bio-alpa2: [2023-06-03 05:51:23,049] [INFO] [comm.py:594:init_distributed] cdb=None
+Ai4bio-alpa2: [2023-06-03 05:51:23,049] [INFO] [comm.py:625:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+Ai4bio-alpa2: [2023-06-03 05:51:23,049] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+Ai4bio-alpa2: [2023-06-03 05:51:23,049] [INFO] [comm.py:594:init_distributed] cdb=None
+Ai4bio-alpa3: Setting ds_accelerator to cuda (auto detect)
+Ai4bio-alpa3: Setting ds_accelerator to cuda (auto detect)
+Ai4bio-alpa3: Setting ds_accelerator to cuda (auto detect)
+Ai4bio-alpa3: Setting ds_accelerator to cuda (auto detect)
+Ai4bio-alpa3: [2023-06-03 05:51:26,065] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+Ai4bio-alpa3: [2023-06-03 05:51:26,065] [INFO] [comm.py:594:init_distributed] cdb=None
+Ai4bio-alpa3: [2023-06-03 05:51:26,065] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+Ai4bio-alpa3: [2023-06-03 05:51:26,065] [INFO] [comm.py:594:init_distributed] cdb=None
+Ai4bio-alpa3: [2023-06-03 05:51:26,074] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+Ai4bio-alpa3: [2023-06-03 05:51:26,074] [INFO] [comm.py:594:init_distributed] cdb=None
+Ai4bio-alpa3: [2023-06-03 05:51:26,074] [WARNING] [comm.py:152:init_deepspeed_backend] NCCL backend in DeepSpeed not yet implemented
+Ai4bio-alpa3: [2023-06-03 05:51:26,074] [INFO] [comm.py:594:init_distributed] cdb=None
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav25.so': libvmw_pvrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libsiw-rdmav25.so': libsiw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'librxe-rdmav25.so': librxe-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libqedr-rdmav25.so': libqedr-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libocrdma-rdmav25.so': libocrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libmthca-rdmav25.so': libmthca-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libmlx5-rdmav25.so': libmlx5-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libmlx4-rdmav25.so': libmlx4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav25.so': libipathverbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libi40iw-rdmav25.so': libi40iw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libhns-rdmav25.so': libhns-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav25.so': libhfi1verbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libefa-rdmav25.so': libefa-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav25.so': libcxgb4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav25.so': libbnxt_re-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav25.so': libvmw_pvrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libsiw-rdmav25.so': libsiw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'librxe-rdmav25.so': librxe-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav25.so': libvmw_pvrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libqedr-rdmav25.so': libqedr-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav25.so': libvmw_pvrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libsiw-rdmav25.so': libsiw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libocrdma-rdmav25.so': libocrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libsiw-rdmav25.so': libsiw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'librxe-rdmav25.so': librxe-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libmthca-rdmav25.so': libmthca-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'librxe-rdmav25.so': librxe-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libqedr-rdmav25.so': libqedr-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libmlx5-rdmav25.so': libmlx5-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libqedr-rdmav25.so': libqedr-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libocrdma-rdmav25.so': libocrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libmlx4-rdmav25.so': libmlx4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libocrdma-rdmav25.so': libocrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libmthca-rdmav25.so': libmthca-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav25.so': libipathverbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libmthca-rdmav25.so': libmthca-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libmlx5-rdmav25.so': libmlx5-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libi40iw-rdmav25.so': libi40iw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libmlx5-rdmav25.so': libmlx5-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libmlx4-rdmav25.so': libmlx4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libhns-rdmav25.so': libhns-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libmlx4-rdmav25.so': libmlx4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav25.so': libipathverbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav25.so': libhfi1verbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav25.so': libipathverbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libi40iw-rdmav25.so': libi40iw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libefa-rdmav25.so': libefa-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libi40iw-rdmav25.so': libi40iw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libhns-rdmav25.so': libhns-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav25.so': libcxgb4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libhns-rdmav25.so': libhns-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav25.so': libhfi1verbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav25.so': libbnxt_re-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav25.so': libhfi1verbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libefa-rdmav25.so': libefa-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libefa-rdmav25.so': libefa-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav25.so': libcxgb4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav25.so': libbnxt_re-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav25.so': libcxgb4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav25.so': libbnxt_re-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav25.so': libvmw_pvrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libsiw-rdmav25.so': libsiw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'librxe-rdmav25.so': librxe-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libqedr-rdmav25.so': libqedr-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libocrdma-rdmav25.so': libocrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libmthca-rdmav25.so': libmthca-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libmlx5-rdmav25.so': libmlx5-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libmlx4-rdmav25.so': libmlx4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav25.so': libipathverbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libi40iw-rdmav25.so': libi40iw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libhns-rdmav25.so': libhns-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav25.so': libhfi1verbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libefa-rdmav25.so': libefa-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav25.so': libcxgb4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav25.so': libbnxt_re-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav25.so': libvmw_pvrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libsiw-rdmav25.so': libsiw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'librxe-rdmav25.so': librxe-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libqedr-rdmav25.so': libqedr-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libocrdma-rdmav25.so': libocrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libmthca-rdmav25.so': libmthca-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libmlx5-rdmav25.so': libmlx5-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libmlx4-rdmav25.so': libmlx4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav25.so': libipathverbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libi40iw-rdmav25.so': libi40iw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libhns-rdmav25.so': libhns-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav25.so': libhfi1verbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libefa-rdmav25.so': libefa-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav25.so': libcxgb4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav25.so': libbnxt_re-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav25.so': libvmw_pvrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libsiw-rdmav25.so': libsiw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'librxe-rdmav25.so': librxe-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libqedr-rdmav25.so': libqedr-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libocrdma-rdmav25.so': libocrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libmthca-rdmav25.so': libmthca-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libmlx5-rdmav25.so': libmlx5-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libmlx4-rdmav25.so': libmlx4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav25.so': libipathverbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libi40iw-rdmav25.so': libi40iw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libhns-rdmav25.so': libhns-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav25.so': libhfi1verbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libefa-rdmav25.so': libefa-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav25.so': libcxgb4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav25.so': libbnxt_re-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libvmw_pvrdma-rdmav25.so': libvmw_pvrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libsiw-rdmav25.so': libsiw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'librxe-rdmav25.so': librxe-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libqedr-rdmav25.so': libqedr-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libocrdma-rdmav25.so': libocrdma-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libmthca-rdmav25.so': libmthca-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libmlx5-rdmav25.so': libmlx5-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libmlx4-rdmav25.so': libmlx4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libipathverbs-rdmav25.so': libipathverbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libi40iw-rdmav25.so': libi40iw-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libhns-rdmav25.so': libhns-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libhfi1verbs-rdmav25.so': libhfi1verbs-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libefa-rdmav25.so': libefa-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libcxgb4-rdmav25.so': libcxgb4-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: libibverbs: Warning: couldn't load driver 'libbnxt_re-rdmav25.so': libbnxt_re-rdmav25.so: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: [2023-06-03 05:51:30,477] [INFO] [partition_parameters.py:454:__exit__] finished initializing model with 13.02B parameters
+Ai4bio-alpa2: 
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]
+Loading checkpoint shards:  33%|███▎      | 1/3 [00:13<00:26, 13.45s/it]
+Loading checkpoint shards:  33%|███▎      | 1/3 [00:13<00:27, 13.59s/it]
+Loading checkpoint shards:  33%|███▎      | 1/3 [00:13<00:26, 13.46s/it]
+Loading checkpoint shards:  33%|███▎      | 1/3 [00:18<00:37, 18.82s/it]
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:24<00:12, 12.13s/it]
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:24<00:12, 12.17s/it]
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:24<00:12, 12.28s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:29<00:00,  8.80s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:29<00:00,  9.87s/it]
+Ai4bio-alpa2: 
+Loading checkpoint shards: 100%|██████████| 3/3 [00:29<00:00,  8.79s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:29<00:00,  9.83s/it]
+Ai4bio-alpa2: 
+Loading checkpoint shards: 100%|██████████| 3/3 [00:29<00:00,  8.83s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:29<00:00,  9.86s/it]
+Ai4bio-alpa3: 
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]
+Loading checkpoint shards:  33%|███▎      | 1/3 [00:11<00:23, 11.84s/it]
+Loading checkpoint shards:  33%|███▎      | 1/3 [00:12<00:24, 12.11s/it]
+Loading checkpoint shards:  33%|███▎      | 1/3 [00:11<00:23, 11.97s/it]
+Loading checkpoint shards:  33%|███▎      | 1/3 [00:12<00:24, 12.10s/it]
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:23<00:11, 11.67s/it]
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:23<00:11, 11.76s/it]
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:23<00:11, 11.63s/it]
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:23<00:11, 11.78s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:29<00:00,  8.88s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:29<00:00,  9.70s/it]
+Ai4bio-alpa3: 
+Loading checkpoint shards: 100%|██████████| 3/3 [00:29<00:00,  8.94s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:29<00:00,  9.70s/it]
+Ai4bio-alpa3: 
+Loading checkpoint shards: 100%|██████████| 3/3 [00:31<00:00, 10.14s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:31<00:00, 10.61s/it]
+Ai4bio-alpa3: 
+Loading checkpoint shards: 100%|██████████| 3/3 [00:31<00:00, 10.24s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:31<00:00, 10.65s/it]
+Ai4bio-alpa2: 
+Loading checkpoint shards:  67%|██████▋   | 2/3 [00:30<00:14, 14.52s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:38<00:00, 11.46s/it]
+Loading checkpoint shards: 100%|██████████| 3/3 [00:38<00:00, 12.72s/it]
+Ai4bio-alpa3: Loading data...
+Ai4bio-alpa2: Loading data...
+Ai4bio-alpa3: #train 475139, #eval 9697
+Ai4bio-alpa3: Formatting inputs...Skip in lazy mode
+Ai4bio-alpa3: Formatting inputs...Skip in lazy mode
+Ai4bio-alpa2: #train 475139, #eval 9697
+Ai4bio-alpa2: Formatting inputs...Skip in lazy mode
+Ai4bio-alpa2: Formatting inputs...Skip in lazy mode
+Ai4bio-alpa2: Using /home/chong.tian/.cache/torch_extensions/py310_cu116 as PyTorch extensions root...
+Ai4bio-alpa3: Using /home/chong.tian/.cache/torch_extensions/py310_cu116 as PyTorch extensions root...
+Ai4bio-alpa3: Using /home/chong.tian/.cache/torch_extensions/py310_cu116 as PyTorch extensions root...
+Ai4bio-alpa2: Using /home/chong.tian/.cache/torch_extensions/py310_cu116 as PyTorch extensions root...
+Ai4bio-alpa2: Detected CUDA files, patching ldflags
+Ai4bio-alpa2: Using /home/chong.tian/.cache/torch_extensions/py310_cu116 as PyTorch extensions root...
+Ai4bio-alpa2: Using /home/chong.tian/.cache/torch_extensions/py310_cu116 as PyTorch extensions root...
+Ai4bio-alpa2: Detected CUDA files, patching ldflags
+Ai4bio-alpa3: Using /home/chong.tian/.cache/torch_extensions/py310_cu116 as PyTorch extensions root...
+Ai4bio-alpa3: Using /home/chong.tian/.cache/torch_extensions/py310_cu116 as PyTorch extensions root...
+Ai4bio-alpa3: Detected CUDA files, patching ldflags
+Ai4bio-alpa3: Loading extension module fused_adam...
+Ai4bio-alpa3: Loading extension module fused_adam...
+Ai4bio-alpa3: Loading extension module fused_adam...
+Ai4bio-alpa3: ╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+Ai4bio-alpa3: │ /home/chong.tian/code/MedVicuna/fastchat/train/train_mem.py:21 in <module>   │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   18 from fastchat.train.train import train                                  │
+Ai4bio-alpa3: │   19                                                                         │
+Ai4bio-alpa3: │   20 if __name__ == "__main__":                                              │
+Ai4bio-alpa3: │ ❱ 21 │   train()                                                             │
+Ai4bio-alpa3: │   22                                                                         │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/code/MedVicuna/fastchat/train/train.py:263 in train         │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   260 │   if list(pathlib.Path(training_args.output_dir).glob("checkpoint-*" │
+Ai4bio-alpa3: │   261 │   │   trainer.train(resume_from_checkpoint=True)                     │
+Ai4bio-alpa3: │   262 │   else:                                                              │
+Ai4bio-alpa3: │ ❱ 263 │   │   trainer.train()                                                │
+Ai4bio-alpa3: │   264 │   # trainer.save_state()                                             │
+Ai4bio-alpa3: │   265 │   safe_save_model_for_hf_trainer(trainer=trainer, output_dir=trainin │
+Ai4bio-alpa3: │   266                                                                        │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/t │
+Ai4bio-alpa3: │ rainer.py:1662 in train                                                      │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1659 │   │   inner_training_loop = find_executable_batch_size(             │
+Ai4bio-alpa3: │   1660 │   │   │   self._inner_training_loop, self._train_batch_size, args.a │
+Ai4bio-alpa3: │   1661 │   │   )                                                             │
+Ai4bio-alpa3: │ ❱ 1662 │   │   return inner_training_loop(                                   │
+Ai4bio-alpa3: │   1663 │   │   │   args=args,                                                │
+Ai4bio-alpa3: │   1664 │   │   │   resume_from_checkpoint=resume_from_checkpoint,            │
+Ai4bio-alpa3: │   1665 │   │   │   trial=trial,                                              │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/t │
+Ai4bio-alpa3: │ rainer.py:1731 in _inner_training_loop                                       │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1728 │   │   │   or self.fsdp is not None                                  │
+Ai4bio-alpa3: │   1729 │   │   )                                                             │
+Ai4bio-alpa3: │   1730 │   │   if args.deepspeed:                                            │
+Ai4bio-alpa3: │ ❱ 1731 │   │   │   deepspeed_engine, optimizer, lr_scheduler = deepspeed_ini │
+Ai4bio-alpa3: │   1732 │   │   │   │   self, num_training_steps=max_steps, resume_from_check │
+Ai4bio-alpa3: │   1733 │   │   │   )                                                         │
+Ai4bio-alpa3: │   1734 │   │   │   self.model = deepspeed_engine.module                      │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/d │
+Ai4bio-alpa3: │ eepspeed.py:378 in deepspeed_init                                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   375 │   │   "lr_scheduler": lr_scheduler,                                  │
+Ai4bio-alpa3: │   376 │   }                                                                  │
+Ai4bio-alpa3: │   377 │                                                                      │
+Ai4bio-alpa3: │ ❱ 378 │   deepspeed_engine, optimizer, _, lr_scheduler = deepspeed.initializ │
+Ai4bio-alpa3: │   379 │                                                                      │
+Ai4bio-alpa3: │   380 │   if resume_from_checkpoint is not None:                             │
+Ai4bio-alpa3: │   381 │   │   # it's possible that the user is trying to resume from model_p │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/__in │
+Ai4bio-alpa3: │ it__.py:165 in initialize                                                    │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   162 │   │   │   │   │   │   │   │   │   │      config=config,              │
+Ai4bio-alpa3: │   163 │   │   │   │   │   │   │   │   │   │      config_class=config_class)  │
+Ai4bio-alpa3: │   164 │   │   else:                                                          │
+Ai4bio-alpa3: │ ❱ 165 │   │   │   engine = DeepSpeedEngine(args=args,                        │
+Ai4bio-alpa3: │   166 │   │   │   │   │   │   │   │   │    model=model,                      │
+Ai4bio-alpa3: │   167 │   │   │   │   │   │   │   │   │    optimizer=optimizer,              │
+Ai4bio-alpa3: │   168 │   │   │   │   │   │   │   │   │    model_parameters=model_parameters │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa3: │ ime/engine.py:309 in __init__                                                │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │    306 │   │   │   model_parameters = list(model_parameters)                 │
+Ai4bio-alpa3: │    307 │   │                                                                 │
+Ai4bio-alpa3: │    308 │   │   if has_optimizer:                                             │
+Ai4bio-alpa3: │ ❱  309 │   │   │   self._configure_optimizer(optimizer, model_parameters)    │
+Ai4bio-alpa3: │    310 │   │   │   self._configure_lr_scheduler(lr_scheduler)                │
+Ai4bio-alpa3: │    311 │   │   │   self._report_progress(0)                                  │
+Ai4bio-alpa3: │    312 │   │   elif self.zero_optimization():                                │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa3: │ ime/engine.py:1174 in _configure_optimizer                                   │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1171 │   │   │   │   │   msg = f'You are using ZeRO-Offload with a client  │
+Ai4bio-alpa3: │   1172 │   │   │   │   │   raise ZeRORuntimeException(msg)                   │
+Ai4bio-alpa3: │   1173 │   │   else:                                                         │
+Ai4bio-alpa3: │ ❱ 1174 │   │   │   basic_optimizer = self._configure_basic_optimizer(model_p │
+Ai4bio-alpa3: │   1175 │   │   │   log_dist(f"Using DeepSpeed Optimizer param name {self.opt │
+Ai4bio-alpa3: │   1176 │   │                                                                 │
+Ai4bio-alpa3: │   1177 │   │   self._check_for_duplicates(basic_optimizer)                   │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa3: │ ime/engine.py:1236 in _configure_basic_optimizer                             │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1233 │   │   │   │   else:                                                 │
+Ai4bio-alpa3: │   1234 │   │   │   │   │   from deepspeed.ops.adam import FusedAdam          │
+Ai4bio-alpa3: │   1235 │   │   │   │   │                                                     │
+Ai4bio-alpa3: │ ❱ 1236 │   │   │   │   │   optimizer = FusedAdam(                            │
+Ai4bio-alpa3: │   1237 │   │   │   │   │   │   model_parameters,                             │
+Ai4bio-alpa3: │   1238 │   │   │   │   │   │   **optimizer_parameters,                       │
+Ai4bio-alpa3: │   1239 │   │   │   │   │   │   adam_w_mode=effective_adam_w_mode,            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa3: │ adam/fused_adam.py:94 in __init__                                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │    91 │   │   self.adam_w_mode = 1 if adam_w_mode else 0                     │
+Ai4bio-alpa3: │    92 │   │   self.set_grad_none = set_grad_none                             │
+Ai4bio-alpa3: │    93 │   │                                                                  │
+Ai4bio-alpa3: │ ❱  94 │   │   fused_adam_cuda = FusedAdamBuilder().load()                    │
+Ai4bio-alpa3: │    95 │   │   # Skip buffer                                                  │
+Ai4bio-alpa3: │    96 │   │   self._dummy_overflow_buf = get_accelerator().IntTensor([0])    │
+Ai4bio-alpa3: │    97 │   │   self.multi_tensor_adam = fused_adam_cuda.multi_tensor_adam     │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa3: │ op_builder/builder.py:454 in load                                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   451 │   │   │                                                              │
+Ai4bio-alpa3: │   452 │   │   │   return importlib.import_module(self.absolute_name())       │
+Ai4bio-alpa3: │   453 │   │   else:                                                          │
+Ai4bio-alpa3: │ ❱ 454 │   │   │   return self.jit_load(verbose)                              │
+Ai4bio-alpa3: │   455 │                                                                      │
+Ai4bio-alpa3: │   456 │   def jit_load(self, verbose=True):                                  │
+Ai4bio-alpa3: │   457 │   │   if not self.is_compatible(verbose):                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa3: │ op_builder/builder.py:497 in jit_load                                        │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   494 │   │   │   │   cxx_args.append("-DBF16_AVAILABLE")                    │
+Ai4bio-alpa3: │   495 │   │   │   │   nvcc_args.append("-DBF16_AVAILABLE")                   │
+Ai4bio-alpa3: │   496 │   │                                                                  │
+Ai4bio-alpa3: │ ❱ 497 │   │   op_module = load(name=self.name,                               │
+Ai4bio-alpa3: │   498 │   │   │   │   │   │    sources=self.strip_empty_entries(sources),    │
+Ai4bio-alpa3: │   499 │   │   │   │   │   │    extra_include_paths=self.strip_empty_entries( │
+Ai4bio-alpa3: │   500 │   │   │   │   │   │    extra_cflags=cxx_args,                        │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa3: │ p_extension.py:1284 in load                                                  │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1281 │   │   ...     extra_cflags=['-O2'],                                 │
+Ai4bio-alpa3: │   1282 │   │   ...     verbose=True)                                         │
+Ai4bio-alpa3: │   1283 │   '''                                                               │
+Ai4bio-alpa3: │ ❱ 1284 │   return _jit_compile(                                              │
+Ai4bio-alpa3: │   1285 │   │   name,                                                         │
+Ai4bio-alpa3: │   1286 │   │   [sources] if isinstance(sources, str) else sources,           │
+Ai4bio-alpa3: │   1287 │   │   extra_cflags,                                                 │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa3: │ p_extension.py:1534 in _jit_compile                                          │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1531 │   if is_standalone:                                                 │
+Ai4bio-alpa3: │   1532 │   │   return _get_exec_path(name, build_directory)                  │
+Ai4bio-alpa3: │   1533 │                                                                     │
+Ai4bio-alpa3: │ ❱ 1534 │   return _import_module_from_library(name, build_directory, is_pyth │
+Ai4bio-alpa3: │   1535                                                                       │
+Ai4bio-alpa3: │   1536                                                                       │
+Ai4bio-alpa3: │   1537 def _write_ninja_file_and_compile_objects(                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa3: │ p_extension.py:1937 in _import_module_from_library                           │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1934 │   │   # https://stackoverflow.com/questions/67631/how-to-import-a-m │
+Ai4bio-alpa3: │   1935 │   │   spec = importlib.util.spec_from_file_location(module_name, fi │
+Ai4bio-alpa3: │   1936 │   │   assert spec is not None                                       │
+Ai4bio-alpa3: │ ❱ 1937 │   │   module = importlib.util.module_from_spec(spec)                │
+Ai4bio-alpa3: │   1938 │   │   assert isinstance(spec.loader, importlib.abc.Loader)          │
+Ai4bio-alpa3: │   1939 │   │   spec.loader.exec_module(module)                               │
+Ai4bio-alpa3: │   1940 │   │   return module                                                 │
+Ai4bio-alpa3: │ in module_from_spec:571                                                      │
+Ai4bio-alpa3: │ in create_module:1176                                                        │
+Ai4bio-alpa3: │ in _call_with_frames_removed:241                                             │
+Ai4bio-alpa3: ╰──────────────────────────────────────────────────────────────────────────────╯
+Ai4bio-alpa3: ImportError: 
+Ai4bio-alpa3: /home/chong.tian/.cache/torch_extensions/py310_cu116/fused_adam/fused_adam.so: 
+Ai4bio-alpa3: cannot open shared object file: No such file or directory
+Ai4bio-alpa3: ╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+Ai4bio-alpa3: │ /home/chong.tian/code/MedVicuna/fastchat/train/train_mem.py:21 in <module>   │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   18 from fastchat.train.train import train                                  │
+Ai4bio-alpa3: │   19                                                                         │
+Ai4bio-alpa3: │   20 if __name__ == "__main__":                                              │
+Ai4bio-alpa3: │ ❱ 21 │   train()                                                             │
+Ai4bio-alpa3: │   22                                                                         │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/code/MedVicuna/fastchat/train/train.py:263 in train         │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   260 │   if list(pathlib.Path(training_args.output_dir).glob("checkpoint-*" │
+Ai4bio-alpa3: │   261 │   │   trainer.train(resume_from_checkpoint=True)                     │
+Ai4bio-alpa3: │   262 │   else:                                                              │
+Ai4bio-alpa3: │ ❱ 263 │   │   trainer.train()                                                │
+Ai4bio-alpa3: │   264 │   # trainer.save_state()                                             │
+Ai4bio-alpa3: │   265 │   safe_save_model_for_hf_trainer(trainer=trainer, output_dir=trainin │
+Ai4bio-alpa3: │   266                                                                        │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/t │
+Ai4bio-alpa3: │ rainer.py:1662 in train                                                      │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1659 │   │   inner_training_loop = find_executable_batch_size(             │
+Ai4bio-alpa3: │   1660 │   │   │   self._inner_training_loop, self._train_batch_size, args.a │
+Ai4bio-alpa3: │   1661 │   │   )                                                             │
+Ai4bio-alpa3: │ ❱ 1662 │   │   return inner_training_loop(                                   │
+Ai4bio-alpa3: │   1663 │   │   │   args=args,                                                │
+Ai4bio-alpa3: │   1664 │   │   │   resume_from_checkpoint=resume_from_checkpoint,            │
+Ai4bio-alpa3: │   1665 │   │   │   trial=trial,                                              │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/t │
+Ai4bio-alpa3: │ rainer.py:1731 in _inner_training_loop                                       │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1728 │   │   │   or self.fsdp is not None                                  │
+Ai4bio-alpa3: │   1729 │   │   )                                                             │
+Ai4bio-alpa3: │   1730 │   │   if args.deepspeed:                                            │
+Ai4bio-alpa3: │ ❱ 1731 │   │   │   deepspeed_engine, optimizer, lr_scheduler = deepspeed_ini │
+Ai4bio-alpa3: │   1732 │   │   │   │   self, num_training_steps=max_steps, resume_from_check │
+Ai4bio-alpa3: │   1733 │   │   │   )                                                         │
+Ai4bio-alpa3: │   1734 │   │   │   self.model = deepspeed_engine.module                      │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/d │
+Ai4bio-alpa3: │ eepspeed.py:378 in deepspeed_init                                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   375 │   │   "lr_scheduler": lr_scheduler,                                  │
+Ai4bio-alpa3: │   376 │   }                                                                  │
+Ai4bio-alpa3: │   377 │                                                                      │
+Ai4bio-alpa3: │ ❱ 378 │   deepspeed_engine, optimizer, _, lr_scheduler = deepspeed.initializ │
+Ai4bio-alpa3: │   379 │                                                                      │
+Ai4bio-alpa3: │   380 │   if resume_from_checkpoint is not None:                             │
+Ai4bio-alpa3: │   381 │   │   # it's possible that the user is trying to resume from model_p │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/__in │
+Ai4bio-alpa3: │ it__.py:165 in initialize                                                    │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   162 │   │   │   │   │   │   │   │   │   │      config=config,              │
+Ai4bio-alpa3: │   163 │   │   │   │   │   │   │   │   │   │      config_class=config_class)  │
+Ai4bio-alpa3: │   164 │   │   else:                                                          │
+Ai4bio-alpa3: │ ❱ 165 │   │   │   engine = DeepSpeedEngine(args=args,                        │
+Ai4bio-alpa3: │   166 │   │   │   │   │   │   │   │   │    model=model,                      │
+Ai4bio-alpa3: │   167 │   │   │   │   │   │   │   │   │    optimizer=optimizer,              │
+Ai4bio-alpa3: │   168 │   │   │   │   │   │   │   │   │    model_parameters=model_parameters │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa3: │ ime/engine.py:309 in __init__                                                │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │    306 │   │   │   model_parameters = list(model_parameters)                 │
+Ai4bio-alpa3: │    307 │   │                                                                 │
+Ai4bio-alpa3: │    308 │   │   if has_optimizer:                                             │
+Ai4bio-alpa3: │ ❱  309 │   │   │   self._configure_optimizer(optimizer, model_parameters)    │
+Ai4bio-alpa3: │    310 │   │   │   self._configure_lr_scheduler(lr_scheduler)                │
+Ai4bio-alpa3: │    311 │   │   │   self._report_progress(0)                                  │
+Ai4bio-alpa3: │    312 │   │   elif self.zero_optimization():                                │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa3: │ ime/engine.py:1174 in _configure_optimizer                                   │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1171 │   │   │   │   │   msg = f'You are using ZeRO-Offload with a client  │
+Ai4bio-alpa3: │   1172 │   │   │   │   │   raise ZeRORuntimeException(msg)                   │
+Ai4bio-alpa3: │   1173 │   │   else:                                                         │
+Ai4bio-alpa3: │ ❱ 1174 │   │   │   basic_optimizer = self._configure_basic_optimizer(model_p │
+Ai4bio-alpa3: │   1175 │   │   │   log_dist(f"Using DeepSpeed Optimizer param name {self.opt │
+Ai4bio-alpa3: │   1176 │   │                                                                 │
+Ai4bio-alpa3: │   1177 │   │   self._check_for_duplicates(basic_optimizer)                   │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa3: │ ime/engine.py:1236 in _configure_basic_optimizer                             │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1233 │   │   │   │   else:                                                 │
+Ai4bio-alpa3: │   1234 │   │   │   │   │   from deepspeed.ops.adam import FusedAdam          │
+Ai4bio-alpa3: │   1235 │   │   │   │   │                                                     │
+Ai4bio-alpa3: │ ❱ 1236 │   │   │   │   │   optimizer = FusedAdam(                            │
+Ai4bio-alpa3: │   1237 │   │   │   │   │   │   model_parameters,                             │
+Ai4bio-alpa3: │   1238 │   │   │   │   │   │   **optimizer_parameters,                       │
+Ai4bio-alpa3: │   1239 │   │   │   │   │   │   adam_w_mode=effective_adam_w_mode,            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa3: │ adam/fused_adam.py:94 in __init__                                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │    91 │   │   self.adam_w_mode = 1 if adam_w_mode else 0                     │
+Ai4bio-alpa3: │    92 │   │   self.set_grad_none = set_grad_none                             │
+Ai4bio-alpa3: │    93 │   │                                                                  │
+Ai4bio-alpa3: │ ❱  94 │   │   fused_adam_cuda = FusedAdamBuilder().load()                    │
+Ai4bio-alpa3: │    95 │   │   # Skip buffer                                                  │
+Ai4bio-alpa3: │    96 │   │   self._dummy_overflow_buf = get_accelerator().IntTensor([0])    │
+Ai4bio-alpa3: │    97 │   │   self.multi_tensor_adam = fused_adam_cuda.multi_tensor_adam     │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa3: │ op_builder/builder.py:454 in load                                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   451 │   │   │                                                              │
+Ai4bio-alpa3: │   452 │   │   │   return importlib.import_module(self.absolute_name())       │
+Ai4bio-alpa3: │   453 │   │   else:                                                          │
+Ai4bio-alpa3: │ ❱ 454 │   │   │   return self.jit_load(verbose)                              │
+Ai4bio-alpa3: │   455 │                                                                      │
+Ai4bio-alpa3: │   456 │   def jit_load(self, verbose=True):                                  │
+Ai4bio-alpa3: │   457 │   │   if not self.is_compatible(verbose):                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa3: │ op_builder/builder.py:497 in jit_load                                        │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   494 │   │   │   │   cxx_args.append("-DBF16_AVAILABLE")                    │
+Ai4bio-alpa3: │   495 │   │   │   │   nvcc_args.append("-DBF16_AVAILABLE")                   │
+Ai4bio-alpa3: │   496 │   │                                                                  │
+Ai4bio-alpa3: │ ❱ 497 │   │   op_module = load(name=self.name,                               │
+Ai4bio-alpa3: │   498 │   │   │   │   │   │    sources=self.strip_empty_entries(sources),    │
+Ai4bio-alpa3: │   499 │   │   │   │   │   │    extra_include_paths=self.strip_empty_entries( │
+Ai4bio-alpa3: │   500 │   │   │   │   │   │    extra_cflags=cxx_args,                        │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa3: │ p_extension.py:1284 in load                                                  │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1281 │   │   ...     extra_cflags=['-O2'],                                 │
+Ai4bio-alpa3: │   1282 │   │   ...     verbose=True)                                         │
+Ai4bio-alpa3: │   1283 │   '''                                                               │
+Ai4bio-alpa3: │ ❱ 1284 │   return _jit_compile(                                              │
+Ai4bio-alpa3: │   1285 │   │   name,                                                         │
+Ai4bio-alpa3: │   1286 │   │   [sources] if isinstance(sources, str) else sources,           │
+Ai4bio-alpa3: │   1287 │   │   extra_cflags,                                                 │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa3: │ p_extension.py:1534 in _jit_compile                                          │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1531 │   if is_standalone:                                                 │
+Ai4bio-alpa3: │   1532 │   │   return _get_exec_path(name, build_directory)                  │
+Ai4bio-alpa3: │   1533 │                                                                     │
+Ai4bio-alpa3: │ ❱ 1534 │   return _import_module_from_library(name, build_directory, is_pyth │
+Ai4bio-alpa3: │   1535                                                                       │
+Ai4bio-alpa3: │   1536                                                                       │
+Ai4bio-alpa3: │   1537 def _write_ninja_file_and_compile_objects(                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa3: │ p_extension.py:1937 in _import_module_from_library                           │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1934 │   │   # https://stackoverflow.com/questions/67631/how-to-import-a-m │
+Ai4bio-alpa3: │   1935 │   │   spec = importlib.util.spec_from_file_location(module_name, fi │
+Ai4bio-alpa3: │   1936 │   │   assert spec is not None                                       │
+Ai4bio-alpa3: │ ❱ 1937 │   │   module = importlib.util.module_from_spec(spec)                │
+Ai4bio-alpa3: │   1938 │   │   assert isinstance(spec.loader, importlib.abc.Loader)          │
+Ai4bio-alpa3: │   1939 │   │   spec.loader.exec_module(module)                               │
+Ai4bio-alpa3: │   1940 │   │   return module                                                 │
+Ai4bio-alpa3: │ in module_from_spec:571                                                      │
+Ai4bio-alpa3: │ in create_module:1176                                                        │
+Ai4bio-alpa3: │ in _call_with_frames_removed:241                                             │
+Ai4bio-alpa3: ╰──────────────────────────────────────────────────────────────────────────────╯
+Ai4bio-alpa3: ImportError: 
+Ai4bio-alpa3: /home/chong.tian/.cache/torch_extensions/py310_cu116/fused_adam/fused_adam.so: 
+Ai4bio-alpa3: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: ╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+Ai4bio-alpa2: │ /home/chong.tian/code/MedVicuna/fastchat/train/train_mem.py:21 in <module>   │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   18 from fastchat.train.train import train                                  │
+Ai4bio-alpa2: │   19                                                                         │
+Ai4bio-alpa2: │   20 if __name__ == "__main__":                                              │
+Ai4bio-alpa2: │ ❱ 21 │   train()                                                             │
+Ai4bio-alpa2: │   22                                                                         │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/code/MedVicuna/fastchat/train/train.py:263 in train         │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   260 │   if list(pathlib.Path(training_args.output_dir).glob("checkpoint-*" │
+Ai4bio-alpa2: │   261 │   │   trainer.train(resume_from_checkpoint=True)                     │
+Ai4bio-alpa2: │   262 │   else:                                                              │
+Ai4bio-alpa2: │ ❱ 263 │   │   trainer.train()                                                │
+Ai4bio-alpa2: │   264 │   # trainer.save_state()                                             │
+Ai4bio-alpa2: │   265 │   safe_save_model_for_hf_trainer(trainer=trainer, output_dir=trainin │
+Ai4bio-alpa2: │   266                                                                        │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/t │
+Ai4bio-alpa2: │ rainer.py:1662 in train                                                      │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1659 │   │   inner_training_loop = find_executable_batch_size(             │
+Ai4bio-alpa2: │   1660 │   │   │   self._inner_training_loop, self._train_batch_size, args.a │
+Ai4bio-alpa2: │   1661 │   │   )                                                             │
+Ai4bio-alpa2: │ ❱ 1662 │   │   return inner_training_loop(                                   │
+Ai4bio-alpa2: │   1663 │   │   │   args=args,                                                │
+Ai4bio-alpa2: │   1664 │   │   │   resume_from_checkpoint=resume_from_checkpoint,            │
+Ai4bio-alpa2: │   1665 │   │   │   trial=trial,                                              │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/t │
+Ai4bio-alpa2: │ rainer.py:1731 in _inner_training_loop                                       │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1728 │   │   │   or self.fsdp is not None                                  │
+Ai4bio-alpa2: │   1729 │   │   )                                                             │
+Ai4bio-alpa2: │   1730 │   │   if args.deepspeed:                                            │
+Ai4bio-alpa2: │ ❱ 1731 │   │   │   deepspeed_engine, optimizer, lr_scheduler = deepspeed_ini │
+Ai4bio-alpa2: │   1732 │   │   │   │   self, num_training_steps=max_steps, resume_from_check │
+Ai4bio-alpa2: │   1733 │   │   │   )                                                         │
+Ai4bio-alpa2: │   1734 │   │   │   self.model = deepspeed_engine.module                      │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/d │
+Ai4bio-alpa2: │ eepspeed.py:378 in deepspeed_init                                            │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   375 │   │   "lr_scheduler": lr_scheduler,                                  │
+Ai4bio-alpa2: │   376 │   }                                                                  │
+Ai4bio-alpa2: │   377 │                                                                      │
+Ai4bio-alpa2: │ ❱ 378 │   deepspeed_engine, optimizer, _, lr_scheduler = deepspeed.initializ │
+Ai4bio-alpa2: │   379 │                                                                      │
+Ai4bio-alpa2: │   380 │   if resume_from_checkpoint is not None:                             │
+Ai4bio-alpa2: │   381 │   │   # it's possible that the user is trying to resume from model_p │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/__in │
+Ai4bio-alpa2: │ it__.py:165 in initialize                                                    │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   162 │   │   │   │   │   │   │   │   │   │      config=config,              │
+Ai4bio-alpa2: │   163 │   │   │   │   │   │   │   │   │   │      config_class=config_class)  │
+Ai4bio-alpa2: │   164 │   │   else:                                                          │
+Ai4bio-alpa2: │ ❱ 165 │   │   │   engine = DeepSpeedEngine(args=args,                        │
+Ai4bio-alpa2: │   166 │   │   │   │   │   │   │   │   │    model=model,                      │
+Ai4bio-alpa2: │   167 │   │   │   │   │   │   │   │   │    optimizer=optimizer,              │
+Ai4bio-alpa2: │   168 │   │   │   │   │   │   │   │   │    model_parameters=model_parameters │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa2: │ ime/engine.py:309 in __init__                                                │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │    306 │   │   │   model_parameters = list(model_parameters)                 │
+Ai4bio-alpa2: │    307 │   │                                                                 │
+Ai4bio-alpa2: │    308 │   │   if has_optimizer:                                             │
+Ai4bio-alpa2: │ ❱  309 │   │   │   self._configure_optimizer(optimizer, model_parameters)    │
+Ai4bio-alpa2: │    310 │   │   │   self._configure_lr_scheduler(lr_scheduler)                │
+Ai4bio-alpa2: │    311 │   │   │   self._report_progress(0)                                  │
+Ai4bio-alpa2: │    312 │   │   elif self.zero_optimization():                                │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa2: │ ime/engine.py:1174 in _configure_optimizer                                   │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1171 │   │   │   │   │   msg = f'You are using ZeRO-Offload with a client  │
+Ai4bio-alpa2: │   1172 │   │   │   │   │   raise ZeRORuntimeException(msg)                   │
+Ai4bio-alpa2: │   1173 │   │   else:                                                         │
+Ai4bio-alpa2: │ ❱ 1174 │   │   │   basic_optimizer = self._configure_basic_optimizer(model_p │
+Ai4bio-alpa2: │   1175 │   │   │   log_dist(f"Using DeepSpeed Optimizer param name {self.opt │
+Ai4bio-alpa2: │   1176 │   │                                                                 │
+Ai4bio-alpa2: │   1177 │   │   self._check_for_duplicates(basic_optimizer)                   │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa2: │ ime/engine.py:1236 in _configure_basic_optimizer                             │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1233 │   │   │   │   else:                                                 │
+Ai4bio-alpa2: │   1234 │   │   │   │   │   from deepspeed.ops.adam import FusedAdam          │
+Ai4bio-alpa2: │   1235 │   │   │   │   │                                                     │
+Ai4bio-alpa2: │ ❱ 1236 │   │   │   │   │   optimizer = FusedAdam(                            │
+Ai4bio-alpa2: │   1237 │   │   │   │   │   │   model_parameters,                             │
+Ai4bio-alpa2: │   1238 │   │   │   │   │   │   **optimizer_parameters,                       │
+Ai4bio-alpa2: │   1239 │   │   │   │   │   │   adam_w_mode=effective_adam_w_mode,            │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa2: │ adam/fused_adam.py:94 in __init__                                            │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │    91 │   │   self.adam_w_mode = 1 if adam_w_mode else 0                     │
+Ai4bio-alpa2: │    92 │   │   self.set_grad_none = set_grad_none                             │
+Ai4bio-alpa2: │    93 │   │                                                                  │
+Ai4bio-alpa2: │ ❱  94 │   │   fused_adam_cuda = FusedAdamBuilder().load()                    │
+Ai4bio-alpa2: │    95 │   │   # Skip buffer                                                  │
+Ai4bio-alpa2: │    96 │   │   self._dummy_overflow_buf = get_accelerator().IntTensor([0])    │
+Ai4bio-alpa2: │    97 │   │   self.multi_tensor_adam = fused_adam_cuda.multi_tensor_adam     │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa2: │ op_builder/builder.py:454 in load                                            │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   451 │   │   │                                                              │
+Ai4bio-alpa2: │   452 │   │   │   return importlib.import_module(self.absolute_name())       │
+Ai4bio-alpa2: │   453 │   │   else:                                                          │
+Ai4bio-alpa2: │ ❱ 454 │   │   │   return self.jit_load(verbose)                              │
+Ai4bio-alpa2: │   455 │                                                                      │
+Ai4bio-alpa2: │   456 │   def jit_load(self, verbose=True):                                  │
+Ai4bio-alpa2: │   457 │   │   if not self.is_compatible(verbose):                            │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa2: │ op_builder/builder.py:497 in jit_load                                        │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   494 │   │   │   │   cxx_args.append("-DBF16_AVAILABLE")                    │
+Ai4bio-alpa2: │   495 │   │   │   │   nvcc_args.append("-DBF16_AVAILABLE")                   │
+Ai4bio-alpa2: │   496 │   │                                                                  │
+Ai4bio-alpa2: │ ❱ 497 │   │   op_module = load(name=self.name,                               │
+Ai4bio-alpa2: │   498 │   │   │   │   │   │    sources=self.strip_empty_entries(sources),    │
+Ai4bio-alpa2: │   499 │   │   │   │   │   │    extra_include_paths=self.strip_empty_entries( │
+Ai4bio-alpa2: │   500 │   │   │   │   │   │    extra_cflags=cxx_args,                        │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa2: │ p_extension.py:1284 in load                                                  │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1281 │   │   ...     extra_cflags=['-O2'],                                 │
+Ai4bio-alpa2: │   1282 │   │   ...     verbose=True)                                         │
+Ai4bio-alpa2: │   1283 │   '''                                                               │
+Ai4bio-alpa2: │ ❱ 1284 │   return _jit_compile(                                              │
+Ai4bio-alpa2: │   1285 │   │   name,                                                         │
+Ai4bio-alpa2: │   1286 │   │   [sources] if isinstance(sources, str) else sources,           │
+Ai4bio-alpa2: │   1287 │   │   extra_cflags,                                                 │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa2: │ p_extension.py:1508 in _jit_compile                                          │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1505 │   │   │   │   │   │                                                 │
+Ai4bio-alpa2: │   1506 │   │   │   │   │   │   sources = list(hipified_sources)              │
+Ai4bio-alpa2: │   1507 │   │   │   │   │                                                     │
+Ai4bio-alpa2: │ ❱ 1508 │   │   │   │   │   _write_ninja_file_and_build_library(              │
+Ai4bio-alpa2: │   1509 │   │   │   │   │   │   name=name,                                    │
+Ai4bio-alpa2: │   1510 │   │   │   │   │   │   sources=sources,                              │
+Ai4bio-alpa2: │   1511 │   │   │   │   │   │   extra_cflags=extra_cflags or [],              │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa2: │ p_extension.py:1600 in _write_ninja_file_and_build_library                   │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1597 │   get_compiler_abi_compatibility_and_version(compiler)              │
+Ai4bio-alpa2: │   1598 │   if with_cuda is None:                                             │
+Ai4bio-alpa2: │   1599 │   │   with_cuda = any(map(_is_cuda_file, sources))                  │
+Ai4bio-alpa2: │ ❱ 1600 │   extra_ldflags = _prepare_ldflags(                                 │
+Ai4bio-alpa2: │   1601 │   │   extra_ldflags or [],                                          │
+Ai4bio-alpa2: │   1602 │   │   with_cuda,                                                    │
+Ai4bio-alpa2: │   1603 │   │   verbose,                                                      │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa2: │ p_extension.py:1709 in _prepare_ldflags                                      │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1706 │   │   │   if CUDNN_HOME is not None:                                │
+Ai4bio-alpa2: │   1707 │   │   │   │   extra_ldflags.append(os.path.join(CUDNN_HOME, "lib",  │
+Ai4bio-alpa2: │   1708 │   │   elif not IS_HIP_EXTENSION:                                    │
+Ai4bio-alpa2: │ ❱ 1709 │   │   │   extra_ldflags.append(f'-L{_join_cuda_home("lib64")}')     │
+Ai4bio-alpa2: │   1710 │   │   │   extra_ldflags.append('-lcudart')                          │
+Ai4bio-alpa2: │   1711 │   │   │   if CUDNN_HOME is not None:                                │
+Ai4bio-alpa2: │   1712 │   │   │   │   extra_ldflags.append(f'-L{os.path.join(CUDNN_HOME, "l │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa2: │ p_extension.py:2231 in _join_cuda_home                                       │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   2228 │   only once we need to get any CUDA-specific path.                  │
+Ai4bio-alpa2: │   2229 │   '''                                                               │
+Ai4bio-alpa2: │   2230 │   if CUDA_HOME is None:                                             │
+Ai4bio-alpa2: │ ❱ 2231 │   │   raise EnvironmentError('CUDA_HOME environment variable is not │
+Ai4bio-alpa2: │   2232 │   │   │   │   │   │   │      'Please set it to your CUDA install ro │
+Ai4bio-alpa2: │   2233 │   return os.path.join(CUDA_HOME, *paths)                            │
+Ai4bio-alpa2: │   2234                                                                       │
+Ai4bio-alpa2: ╰──────────────────────────────────────────────────────────────────────────────╯
+Ai4bio-alpa2: OSError: CUDA_HOME environment variable is not set. Please set it to your CUDA 
+Ai4bio-alpa2: install root.
+Ai4bio-alpa3: ╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+Ai4bio-alpa3: │ /home/chong.tian/code/MedVicuna/fastchat/train/train_mem.py:21 in <module>   │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   18 from fastchat.train.train import train                                  │
+Ai4bio-alpa3: │   19                                                                         │
+Ai4bio-alpa3: │   20 if __name__ == "__main__":                                              │
+Ai4bio-alpa3: │ ❱ 21 │   train()                                                             │
+Ai4bio-alpa3: │   22                                                                         │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/code/MedVicuna/fastchat/train/train.py:263 in train         │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   260 │   if list(pathlib.Path(training_args.output_dir).glob("checkpoint-*" │
+Ai4bio-alpa3: │   261 │   │   trainer.train(resume_from_checkpoint=True)                     │
+Ai4bio-alpa3: │   262 │   else:                                                              │
+Ai4bio-alpa3: │ ❱ 263 │   │   trainer.train()                                                │
+Ai4bio-alpa3: │   264 │   # trainer.save_state()                                             │
+Ai4bio-alpa3: │   265 │   safe_save_model_for_hf_trainer(trainer=trainer, output_dir=trainin │
+Ai4bio-alpa3: │   266                                                                        │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/t │
+Ai4bio-alpa3: │ rainer.py:1662 in train                                                      │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1659 │   │   inner_training_loop = find_executable_batch_size(             │
+Ai4bio-alpa3: │   1660 │   │   │   self._inner_training_loop, self._train_batch_size, args.a │
+Ai4bio-alpa3: │   1661 │   │   )                                                             │
+Ai4bio-alpa3: │ ❱ 1662 │   │   return inner_training_loop(                                   │
+Ai4bio-alpa3: │   1663 │   │   │   args=args,                                                │
+Ai4bio-alpa3: │   1664 │   │   │   resume_from_checkpoint=resume_from_checkpoint,            │
+Ai4bio-alpa3: │   1665 │   │   │   trial=trial,                                              │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/t │
+Ai4bio-alpa3: │ rainer.py:1731 in _inner_training_loop                                       │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1728 │   │   │   or self.fsdp is not None                                  │
+Ai4bio-alpa3: │   1729 │   │   )                                                             │
+Ai4bio-alpa3: │   1730 │   │   if args.deepspeed:                                            │
+Ai4bio-alpa3: │ ❱ 1731 │   │   │   deepspeed_engine, optimizer, lr_scheduler = deepspeed_ini │
+Ai4bio-alpa3: │   1732 │   │   │   │   self, num_training_steps=max_steps, resume_from_check │
+Ai4bio-alpa3: │   1733 │   │   │   )                                                         │
+Ai4bio-alpa3: │   1734 │   │   │   self.model = deepspeed_engine.module                      │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/d │
+Ai4bio-alpa3: │ eepspeed.py:378 in deepspeed_init                                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   375 │   │   "lr_scheduler": lr_scheduler,                                  │
+Ai4bio-alpa3: │   376 │   }                                                                  │
+Ai4bio-alpa3: │   377 │                                                                      │
+Ai4bio-alpa3: │ ❱ 378 │   deepspeed_engine, optimizer, _, lr_scheduler = deepspeed.initializ │
+Ai4bio-alpa3: │   379 │                                                                      │
+Ai4bio-alpa3: │   380 │   if resume_from_checkpoint is not None:                             │
+Ai4bio-alpa3: │   381 │   │   # it's possible that the user is trying to resume from model_p │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/__in │
+Ai4bio-alpa3: │ it__.py:165 in initialize                                                    │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   162 │   │   │   │   │   │   │   │   │   │      config=config,              │
+Ai4bio-alpa3: │   163 │   │   │   │   │   │   │   │   │   │      config_class=config_class)  │
+Ai4bio-alpa3: │   164 │   │   else:                                                          │
+Ai4bio-alpa3: │ ❱ 165 │   │   │   engine = DeepSpeedEngine(args=args,                        │
+Ai4bio-alpa3: │   166 │   │   │   │   │   │   │   │   │    model=model,                      │
+Ai4bio-alpa3: │   167 │   │   │   │   │   │   │   │   │    optimizer=optimizer,              │
+Ai4bio-alpa3: │   168 │   │   │   │   │   │   │   │   │    model_parameters=model_parameters │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa3: │ ime/engine.py:309 in __init__                                                │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │    306 │   │   │   model_parameters = list(model_parameters)                 │
+Ai4bio-alpa3: │    307 │   │                                                                 │
+Ai4bio-alpa3: │    308 │   │   if has_optimizer:                                             │
+Ai4bio-alpa3: │ ❱  309 │   │   │   self._configure_optimizer(optimizer, model_parameters)    │
+Ai4bio-alpa3: │    310 │   │   │   self._configure_lr_scheduler(lr_scheduler)                │
+Ai4bio-alpa3: │    311 │   │   │   self._report_progress(0)                                  │
+Ai4bio-alpa3: │    312 │   │   elif self.zero_optimization():                                │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa3: │ ime/engine.py:1174 in _configure_optimizer                                   │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1171 │   │   │   │   │   msg = f'You are using ZeRO-Offload with a client  │
+Ai4bio-alpa3: │   1172 │   │   │   │   │   raise ZeRORuntimeException(msg)                   │
+Ai4bio-alpa3: │   1173 │   │   else:                                                         │
+Ai4bio-alpa3: │ ❱ 1174 │   │   │   basic_optimizer = self._configure_basic_optimizer(model_p │
+Ai4bio-alpa3: │   1175 │   │   │   log_dist(f"Using DeepSpeed Optimizer param name {self.opt │
+Ai4bio-alpa3: │   1176 │   │                                                                 │
+Ai4bio-alpa3: │   1177 │   │   self._check_for_duplicates(basic_optimizer)                   │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa3: │ ime/engine.py:1236 in _configure_basic_optimizer                             │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1233 │   │   │   │   else:                                                 │
+Ai4bio-alpa3: │   1234 │   │   │   │   │   from deepspeed.ops.adam import FusedAdam          │
+Ai4bio-alpa3: │   1235 │   │   │   │   │                                                     │
+Ai4bio-alpa3: │ ❱ 1236 │   │   │   │   │   optimizer = FusedAdam(                            │
+Ai4bio-alpa3: │   1237 │   │   │   │   │   │   model_parameters,                             │
+Ai4bio-alpa3: │   1238 │   │   │   │   │   │   **optimizer_parameters,                       │
+Ai4bio-alpa3: │   1239 │   │   │   │   │   │   adam_w_mode=effective_adam_w_mode,            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa3: │ adam/fused_adam.py:94 in __init__                                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │    91 │   │   self.adam_w_mode = 1 if adam_w_mode else 0                     │
+Ai4bio-alpa3: │    92 │   │   self.set_grad_none = set_grad_none                             │
+Ai4bio-alpa3: │    93 │   │                                                                  │
+Ai4bio-alpa3: │ ❱  94 │   │   fused_adam_cuda = FusedAdamBuilder().load()                    │
+Ai4bio-alpa3: │    95 │   │   # Skip buffer                                                  │
+Ai4bio-alpa3: │    96 │   │   self._dummy_overflow_buf = get_accelerator().IntTensor([0])    │
+Ai4bio-alpa3: │    97 │   │   self.multi_tensor_adam = fused_adam_cuda.multi_tensor_adam     │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa3: │ op_builder/builder.py:454 in load                                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   451 │   │   │                                                              │
+Ai4bio-alpa3: │   452 │   │   │   return importlib.import_module(self.absolute_name())       │
+Ai4bio-alpa3: │   453 │   │   else:                                                          │
+Ai4bio-alpa3: │ ❱ 454 │   │   │   return self.jit_load(verbose)                              │
+Ai4bio-alpa3: │   455 │                                                                      │
+Ai4bio-alpa3: │   456 │   def jit_load(self, verbose=True):                                  │
+Ai4bio-alpa3: │   457 │   │   if not self.is_compatible(verbose):                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa3: │ op_builder/builder.py:497 in jit_load                                        │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   494 │   │   │   │   cxx_args.append("-DBF16_AVAILABLE")                    │
+Ai4bio-alpa3: │   495 │   │   │   │   nvcc_args.append("-DBF16_AVAILABLE")                   │
+Ai4bio-alpa3: │   496 │   │                                                                  │
+Ai4bio-alpa3: │ ❱ 497 │   │   op_module = load(name=self.name,                               │
+Ai4bio-alpa3: │   498 │   │   │   │   │   │    sources=self.strip_empty_entries(sources),    │
+Ai4bio-alpa3: │   499 │   │   │   │   │   │    extra_include_paths=self.strip_empty_entries( │
+Ai4bio-alpa3: │   500 │   │   │   │   │   │    extra_cflags=cxx_args,                        │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa3: │ p_extension.py:1284 in load                                                  │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1281 │   │   ...     extra_cflags=['-O2'],                                 │
+Ai4bio-alpa3: │   1282 │   │   ...     verbose=True)                                         │
+Ai4bio-alpa3: │   1283 │   '''                                                               │
+Ai4bio-alpa3: │ ❱ 1284 │   return _jit_compile(                                              │
+Ai4bio-alpa3: │   1285 │   │   name,                                                         │
+Ai4bio-alpa3: │   1286 │   │   [sources] if isinstance(sources, str) else sources,           │
+Ai4bio-alpa3: │   1287 │   │   extra_cflags,                                                 │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa3: │ p_extension.py:1534 in _jit_compile                                          │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1531 │   if is_standalone:                                                 │
+Ai4bio-alpa3: │   1532 │   │   return _get_exec_path(name, build_directory)                  │
+Ai4bio-alpa3: │   1533 │                                                                     │
+Ai4bio-alpa3: │ ❱ 1534 │   return _import_module_from_library(name, build_directory, is_pyth │
+Ai4bio-alpa3: │   1535                                                                       │
+Ai4bio-alpa3: │   1536                                                                       │
+Ai4bio-alpa3: │   1537 def _write_ninja_file_and_compile_objects(                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa3: │ p_extension.py:1937 in _import_module_from_library                           │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1934 │   │   # https://stackoverflow.com/questions/67631/how-to-import-a-m │
+Ai4bio-alpa3: │   1935 │   │   spec = importlib.util.spec_from_file_location(module_name, fi │
+Ai4bio-alpa3: │   1936 │   │   assert spec is not None                                       │
+Ai4bio-alpa3: │ ❱ 1937 │   │   module = importlib.util.module_from_spec(spec)                │
+Ai4bio-alpa3: │   1938 │   │   assert isinstance(spec.loader, importlib.abc.Loader)          │
+Ai4bio-alpa3: │   1939 │   │   spec.loader.exec_module(module)                               │
+Ai4bio-alpa3: │   1940 │   │   return module                                                 │
+Ai4bio-alpa3: │ in module_from_spec:571                                                      │
+Ai4bio-alpa3: │ in create_module:1176                                                        │
+Ai4bio-alpa3: │ in _call_with_frames_removed:241                                             │
+Ai4bio-alpa3: ╰──────────────────────────────────────────────────────────────────────────────╯
+Ai4bio-alpa3: ImportError: 
+Ai4bio-alpa3: /home/chong.tian/.cache/torch_extensions/py310_cu116/fused_adam/fused_adam.so: 
+Ai4bio-alpa3: cannot open shared object file: No such file or directory
+Ai4bio-alpa2: ╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+Ai4bio-alpa2: │ /home/chong.tian/code/MedVicuna/fastchat/train/train_mem.py:21 in <module>   │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   18 from fastchat.train.train import train                                  │
+Ai4bio-alpa2: │   19                                                                         │
+Ai4bio-alpa2: │   20 if __name__ == "__main__":                                              │
+Ai4bio-alpa2: │ ❱ 21 │   train()                                                             │
+Ai4bio-alpa2: │   22                                                                         │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/code/MedVicuna/fastchat/train/train.py:263 in train         │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   260 │   if list(pathlib.Path(training_args.output_dir).glob("checkpoint-*" │
+Ai4bio-alpa2: │   261 │   │   trainer.train(resume_from_checkpoint=True)                     │
+Ai4bio-alpa2: │   262 │   else:                                                              │
+Ai4bio-alpa2: │ ❱ 263 │   │   trainer.train()                                                │
+Ai4bio-alpa2: │   264 │   # trainer.save_state()                                             │
+Ai4bio-alpa2: │   265 │   safe_save_model_for_hf_trainer(trainer=trainer, output_dir=trainin │
+Ai4bio-alpa2: │   266                                                                        │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/t │
+Ai4bio-alpa2: │ rainer.py:1662 in train                                                      │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1659 │   │   inner_training_loop = find_executable_batch_size(             │
+Ai4bio-alpa2: │   1660 │   │   │   self._inner_training_loop, self._train_batch_size, args.a │
+Ai4bio-alpa2: │   1661 │   │   )                                                             │
+Ai4bio-alpa2: │ ❱ 1662 │   │   return inner_training_loop(                                   │
+Ai4bio-alpa2: │   1663 │   │   │   args=args,                                                │
+Ai4bio-alpa2: │   1664 │   │   │   resume_from_checkpoint=resume_from_checkpoint,            │
+Ai4bio-alpa2: │   1665 │   │   │   trial=trial,                                              │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/t │
+Ai4bio-alpa2: │ rainer.py:1731 in _inner_training_loop                                       │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1728 │   │   │   or self.fsdp is not None                                  │
+Ai4bio-alpa2: │   1729 │   │   )                                                             │
+Ai4bio-alpa2: │   1730 │   │   if args.deepspeed:                                            │
+Ai4bio-alpa2: │ ❱ 1731 │   │   │   deepspeed_engine, optimizer, lr_scheduler = deepspeed_ini │
+Ai4bio-alpa2: │   1732 │   │   │   │   self, num_training_steps=max_steps, resume_from_check │
+Ai4bio-alpa2: │   1733 │   │   │   )                                                         │
+Ai4bio-alpa2: │   1734 │   │   │   self.model = deepspeed_engine.module                      │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/d │
+Ai4bio-alpa2: │ eepspeed.py:378 in deepspeed_init                                            │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   375 │   │   "lr_scheduler": lr_scheduler,                                  │
+Ai4bio-alpa2: │   376 │   }                                                                  │
+Ai4bio-alpa2: │   377 │                                                                      │
+Ai4bio-alpa2: │ ❱ 378 │   deepspeed_engine, optimizer, _, lr_scheduler = deepspeed.initializ │
+Ai4bio-alpa2: │   379 │                                                                      │
+Ai4bio-alpa2: │   380 │   if resume_from_checkpoint is not None:                             │
+Ai4bio-alpa2: │   381 │   │   # it's possible that the user is trying to resume from model_p │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/__in │
+Ai4bio-alpa2: │ it__.py:165 in initialize                                                    │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   162 │   │   │   │   │   │   │   │   │   │      config=config,              │
+Ai4bio-alpa2: │   163 │   │   │   │   │   │   │   │   │   │      config_class=config_class)  │
+Ai4bio-alpa2: │   164 │   │   else:                                                          │
+Ai4bio-alpa2: │ ❱ 165 │   │   │   engine = DeepSpeedEngine(args=args,                        │
+Ai4bio-alpa2: │   166 │   │   │   │   │   │   │   │   │    model=model,                      │
+Ai4bio-alpa2: │   167 │   │   │   │   │   │   │   │   │    optimizer=optimizer,              │
+Ai4bio-alpa2: │   168 │   │   │   │   │   │   │   │   │    model_parameters=model_parameters │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa2: │ ime/engine.py:309 in __init__                                                │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │    306 │   │   │   model_parameters = list(model_parameters)                 │
+Ai4bio-alpa2: │    307 │   │                                                                 │
+Ai4bio-alpa2: │    308 │   │   if has_optimizer:                                             │
+Ai4bio-alpa2: │ ❱  309 │   │   │   self._configure_optimizer(optimizer, model_parameters)    │
+Ai4bio-alpa2: │    310 │   │   │   self._configure_lr_scheduler(lr_scheduler)                │
+Ai4bio-alpa2: │    311 │   │   │   self._report_progress(0)                                  │
+Ai4bio-alpa2: │    312 │   │   elif self.zero_optimization():                                │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa2: │ ime/engine.py:1174 in _configure_optimizer                                   │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1171 │   │   │   │   │   msg = f'You are using ZeRO-Offload with a client  │
+Ai4bio-alpa2: │   1172 │   │   │   │   │   raise ZeRORuntimeException(msg)                   │
+Ai4bio-alpa2: │   1173 │   │   else:                                                         │
+Ai4bio-alpa2: │ ❱ 1174 │   │   │   basic_optimizer = self._configure_basic_optimizer(model_p │
+Ai4bio-alpa2: │   1175 │   │   │   log_dist(f"Using DeepSpeed Optimizer param name {self.opt │
+Ai4bio-alpa2: │   1176 │   │                                                                 │
+Ai4bio-alpa2: │   1177 │   │   self._check_for_duplicates(basic_optimizer)                   │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa2: │ ime/engine.py:1236 in _configure_basic_optimizer                             │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1233 │   │   │   │   else:                                                 │
+Ai4bio-alpa2: │   1234 │   │   │   │   │   from deepspeed.ops.adam import FusedAdam          │
+Ai4bio-alpa2: │   1235 │   │   │   │   │                                                     │
+Ai4bio-alpa2: │ ❱ 1236 │   │   │   │   │   optimizer = FusedAdam(                            │
+Ai4bio-alpa2: │   1237 │   │   │   │   │   │   model_parameters,                             │
+Ai4bio-alpa2: │   1238 │   │   │   │   │   │   **optimizer_parameters,                       │
+Ai4bio-alpa2: │   1239 │   │   │   │   │   │   adam_w_mode=effective_adam_w_mode,            │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa2: │ adam/fused_adam.py:94 in __init__                                            │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │    91 │   │   self.adam_w_mode = 1 if adam_w_mode else 0                     │
+Ai4bio-alpa2: │    92 │   │   self.set_grad_none = set_grad_none                             │
+Ai4bio-alpa2: │    93 │   │                                                                  │
+Ai4bio-alpa2: │ ❱  94 │   │   fused_adam_cuda = FusedAdamBuilder().load()                    │
+Ai4bio-alpa2: │    95 │   │   # Skip buffer                                                  │
+Ai4bio-alpa2: │    96 │   │   self._dummy_overflow_buf = get_accelerator().IntTensor([0])    │
+Ai4bio-alpa2: │    97 │   │   self.multi_tensor_adam = fused_adam_cuda.multi_tensor_adam     │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa2: │ op_builder/builder.py:454 in load                                            │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   451 │   │   │                                                              │
+Ai4bio-alpa2: │   452 │   │   │   return importlib.import_module(self.absolute_name())       │
+Ai4bio-alpa2: │   453 │   │   else:                                                          │
+Ai4bio-alpa2: │ ❱ 454 │   │   │   return self.jit_load(verbose)                              │
+Ai4bio-alpa2: │   455 │                                                                      │
+Ai4bio-alpa2: │   456 │   def jit_load(self, verbose=True):                                  │
+Ai4bio-alpa2: │   457 │   │   if not self.is_compatible(verbose):                            │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa2: │ op_builder/builder.py:497 in jit_load                                        │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   494 │   │   │   │   cxx_args.append("-DBF16_AVAILABLE")                    │
+Ai4bio-alpa2: │   495 │   │   │   │   nvcc_args.append("-DBF16_AVAILABLE")                   │
+Ai4bio-alpa2: │   496 │   │                                                                  │
+Ai4bio-alpa2: │ ❱ 497 │   │   op_module = load(name=self.name,                               │
+Ai4bio-alpa2: │   498 │   │   │   │   │   │    sources=self.strip_empty_entries(sources),    │
+Ai4bio-alpa2: │   499 │   │   │   │   │   │    extra_include_paths=self.strip_empty_entries( │
+Ai4bio-alpa2: │   500 │   │   │   │   │   │    extra_cflags=cxx_args,                        │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa2: │ p_extension.py:1284 in load                                                  │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1281 │   │   ...     extra_cflags=['-O2'],                                 │
+Ai4bio-alpa2: │   1282 │   │   ...     verbose=True)                                         │
+Ai4bio-alpa2: │   1283 │   '''                                                               │
+Ai4bio-alpa2: │ ❱ 1284 │   return _jit_compile(                                              │
+Ai4bio-alpa2: │   1285 │   │   name,                                                         │
+Ai4bio-alpa2: │   1286 │   │   [sources] if isinstance(sources, str) else sources,           │
+Ai4bio-alpa2: │   1287 │   │   extra_cflags,                                                 │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa2: │ p_extension.py:1508 in _jit_compile                                          │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1505 │   │   │   │   │   │                                                 │
+Ai4bio-alpa2: │   1506 │   │   │   │   │   │   sources = list(hipified_sources)              │
+Ai4bio-alpa2: │   1507 │   │   │   │   │                                                     │
+Ai4bio-alpa2: │ ❱ 1508 │   │   │   │   │   _write_ninja_file_and_build_library(              │
+Ai4bio-alpa2: │   1509 │   │   │   │   │   │   name=name,                                    │
+Ai4bio-alpa2: │   1510 │   │   │   │   │   │   sources=sources,                              │
+Ai4bio-alpa2: │   1511 │   │   │   │   │   │   extra_cflags=extra_cflags or [],              │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa2: │ p_extension.py:1600 in _write_ninja_file_and_build_library                   │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1597 │   get_compiler_abi_compatibility_and_version(compiler)              │
+Ai4bio-alpa2: │   1598 │   if with_cuda is None:                                             │
+Ai4bio-alpa2: │   1599 │   │   with_cuda = any(map(_is_cuda_file, sources))                  │
+Ai4bio-alpa2: │ ❱ 1600 │   extra_ldflags = _prepare_ldflags(                                 │
+Ai4bio-alpa2: │   1601 │   │   extra_ldflags or [],                                          │
+Ai4bio-alpa2: │   1602 │   │   with_cuda,                                                    │
+Ai4bio-alpa2: │   1603 │   │   verbose,                                                      │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa2: │ p_extension.py:1709 in _prepare_ldflags                                      │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   1706 │   │   │   if CUDNN_HOME is not None:                                │
+Ai4bio-alpa2: │   1707 │   │   │   │   extra_ldflags.append(os.path.join(CUDNN_HOME, "lib",  │
+Ai4bio-alpa2: │   1708 │   │   elif not IS_HIP_EXTENSION:                                    │
+Ai4bio-alpa2: │ ❱ 1709 │   │   │   extra_ldflags.append(f'-L{_join_cuda_home("lib64")}')     │
+Ai4bio-alpa2: │   1710 │   │   │   extra_ldflags.append('-lcudart')                          │
+Ai4bio-alpa2: │   1711 │   │   │   if CUDNN_HOME is not None:                                │
+Ai4bio-alpa2: │   1712 │   │   │   │   extra_ldflags.append(f'-L{os.path.join(CUDNN_HOME, "l │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa2: │ p_extension.py:2231 in _join_cuda_home                                       │
+Ai4bio-alpa2: │                                                                              │
+Ai4bio-alpa2: │   2228 │   only once we need to get any CUDA-specific path.                  │
+Ai4bio-alpa2: │   2229 │   '''                                                               │
+Ai4bio-alpa2: │   2230 │   if CUDA_HOME is None:                                             │
+Ai4bio-alpa2: │ ❱ 2231 │   │   raise EnvironmentError('CUDA_HOME environment variable is not │
+Ai4bio-alpa2: │   2232 │   │   │   │   │   │   │      'Please set it to your CUDA install ro │
+Ai4bio-alpa2: │   2233 │   return os.path.join(CUDA_HOME, *paths)                            │
+Ai4bio-alpa2: │   2234                                                                       │
+Ai4bio-alpa2: ╰──────────────────────────────────────────────────────────────────────────────╯
+Ai4bio-alpa2: OSError: CUDA_HOME environment variable is not set. Please set it to your CUDA 
+Ai4bio-alpa2: install root.
+Ai4bio-alpa3: ╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+Ai4bio-alpa3: │ /home/chong.tian/code/MedVicuna/fastchat/train/train_mem.py:21 in <module>   │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   18 from fastchat.train.train import train                                  │
+Ai4bio-alpa3: │   19                                                                         │
+Ai4bio-alpa3: │   20 if __name__ == "__main__":                                              │
+Ai4bio-alpa3: │ ❱ 21 │   train()                                                             │
+Ai4bio-alpa3: │   22                                                                         │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/code/MedVicuna/fastchat/train/train.py:263 in train         │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   260 │   if list(pathlib.Path(training_args.output_dir).glob("checkpoint-*" │
+Ai4bio-alpa3: │   261 │   │   trainer.train(resume_from_checkpoint=True)                     │
+Ai4bio-alpa3: │   262 │   else:                                                              │
+Ai4bio-alpa3: │ ❱ 263 │   │   trainer.train()                                                │
+Ai4bio-alpa3: │   264 │   # trainer.save_state()                                             │
+Ai4bio-alpa3: │   265 │   safe_save_model_for_hf_trainer(trainer=trainer, output_dir=trainin │
+Ai4bio-alpa3: │   266                                                                        │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/t │
+Ai4bio-alpa3: │ rainer.py:1662 in train                                                      │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1659 │   │   inner_training_loop = find_executable_batch_size(             │
+Ai4bio-alpa3: │   1660 │   │   │   self._inner_training_loop, self._train_batch_size, args.a │
+Ai4bio-alpa3: │   1661 │   │   )                                                             │
+Ai4bio-alpa3: │ ❱ 1662 │   │   return inner_training_loop(                                   │
+Ai4bio-alpa3: │   1663 │   │   │   args=args,                                                │
+Ai4bio-alpa3: │   1664 │   │   │   resume_from_checkpoint=resume_from_checkpoint,            │
+Ai4bio-alpa3: │   1665 │   │   │   trial=trial,                                              │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/t │
+Ai4bio-alpa3: │ rainer.py:1731 in _inner_training_loop                                       │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1728 │   │   │   or self.fsdp is not None                                  │
+Ai4bio-alpa3: │   1729 │   │   )                                                             │
+Ai4bio-alpa3: │   1730 │   │   if args.deepspeed:                                            │
+Ai4bio-alpa3: │ ❱ 1731 │   │   │   deepspeed_engine, optimizer, lr_scheduler = deepspeed_ini │
+Ai4bio-alpa3: │   1732 │   │   │   │   self, num_training_steps=max_steps, resume_from_check │
+Ai4bio-alpa3: │   1733 │   │   │   )                                                         │
+Ai4bio-alpa3: │   1734 │   │   │   self.model = deepspeed_engine.module                      │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/transformers/d │
+Ai4bio-alpa3: │ eepspeed.py:378 in deepspeed_init                                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   375 │   │   "lr_scheduler": lr_scheduler,                                  │
+Ai4bio-alpa3: │   376 │   }                                                                  │
+Ai4bio-alpa3: │   377 │                                                                      │
+Ai4bio-alpa3: │ ❱ 378 │   deepspeed_engine, optimizer, _, lr_scheduler = deepspeed.initializ │
+Ai4bio-alpa3: │   379 │                                                                      │
+Ai4bio-alpa3: │   380 │   if resume_from_checkpoint is not None:                             │
+Ai4bio-alpa3: │   381 │   │   # it's possible that the user is trying to resume from model_p │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/__in │
+Ai4bio-alpa3: │ it__.py:165 in initialize                                                    │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   162 │   │   │   │   │   │   │   │   │   │      config=config,              │
+Ai4bio-alpa3: │   163 │   │   │   │   │   │   │   │   │   │      config_class=config_class)  │
+Ai4bio-alpa3: │   164 │   │   else:                                                          │
+Ai4bio-alpa3: │ ❱ 165 │   │   │   engine = DeepSpeedEngine(args=args,                        │
+Ai4bio-alpa3: │   166 │   │   │   │   │   │   │   │   │    model=model,                      │
+Ai4bio-alpa3: │   167 │   │   │   │   │   │   │   │   │    optimizer=optimizer,              │
+Ai4bio-alpa3: │   168 │   │   │   │   │   │   │   │   │    model_parameters=model_parameters │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa3: │ ime/engine.py:309 in __init__                                                │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │    306 │   │   │   model_parameters = list(model_parameters)                 │
+Ai4bio-alpa3: │    307 │   │                                                                 │
+Ai4bio-alpa3: │    308 │   │   if has_optimizer:                                             │
+Ai4bio-alpa3: │ ❱  309 │   │   │   self._configure_optimizer(optimizer, model_parameters)    │
+Ai4bio-alpa3: │    310 │   │   │   self._configure_lr_scheduler(lr_scheduler)                │
+Ai4bio-alpa3: │    311 │   │   │   self._report_progress(0)                                  │
+Ai4bio-alpa3: │    312 │   │   elif self.zero_optimization():                                │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa3: │ ime/engine.py:1174 in _configure_optimizer                                   │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1171 │   │   │   │   │   msg = f'You are using ZeRO-Offload with a client  │
+Ai4bio-alpa3: │   1172 │   │   │   │   │   raise ZeRORuntimeException(msg)                   │
+Ai4bio-alpa3: │   1173 │   │   else:                                                         │
+Ai4bio-alpa3: │ ❱ 1174 │   │   │   basic_optimizer = self._configure_basic_optimizer(model_p │
+Ai4bio-alpa3: │   1175 │   │   │   log_dist(f"Using DeepSpeed Optimizer param name {self.opt │
+Ai4bio-alpa3: │   1176 │   │                                                                 │
+Ai4bio-alpa3: │   1177 │   │   self._check_for_duplicates(basic_optimizer)                   │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/runt │
+Ai4bio-alpa3: │ ime/engine.py:1236 in _configure_basic_optimizer                             │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1233 │   │   │   │   else:                                                 │
+Ai4bio-alpa3: │   1234 │   │   │   │   │   from deepspeed.ops.adam import FusedAdam          │
+Ai4bio-alpa3: │   1235 │   │   │   │   │                                                     │
+Ai4bio-alpa3: │ ❱ 1236 │   │   │   │   │   optimizer = FusedAdam(                            │
+Ai4bio-alpa3: │   1237 │   │   │   │   │   │   model_parameters,                             │
+Ai4bio-alpa3: │   1238 │   │   │   │   │   │   **optimizer_parameters,                       │
+Ai4bio-alpa3: │   1239 │   │   │   │   │   │   adam_w_mode=effective_adam_w_mode,            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa3: │ adam/fused_adam.py:94 in __init__                                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │    91 │   │   self.adam_w_mode = 1 if adam_w_mode else 0                     │
+Ai4bio-alpa3: │    92 │   │   self.set_grad_none = set_grad_none                             │
+Ai4bio-alpa3: │    93 │   │                                                                  │
+Ai4bio-alpa3: │ ❱  94 │   │   fused_adam_cuda = FusedAdamBuilder().load()                    │
+Ai4bio-alpa3: │    95 │   │   # Skip buffer                                                  │
+Ai4bio-alpa3: │    96 │   │   self._dummy_overflow_buf = get_accelerator().IntTensor([0])    │
+Ai4bio-alpa3: │    97 │   │   self.multi_tensor_adam = fused_adam_cuda.multi_tensor_adam     │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa3: │ op_builder/builder.py:454 in load                                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   451 │   │   │                                                              │
+Ai4bio-alpa3: │   452 │   │   │   return importlib.import_module(self.absolute_name())       │
+Ai4bio-alpa3: │   453 │   │   else:                                                          │
+Ai4bio-alpa3: │ ❱ 454 │   │   │   return self.jit_load(verbose)                              │
+Ai4bio-alpa3: │   455 │                                                                      │
+Ai4bio-alpa3: │   456 │   def jit_load(self, verbose=True):                                  │
+Ai4bio-alpa3: │   457 │   │   if not self.is_compatible(verbose):                            │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/deepspeed/ops/ │
+Ai4bio-alpa3: │ op_builder/builder.py:497 in jit_load                                        │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   494 │   │   │   │   cxx_args.append("-DBF16_AVAILABLE")                    │
+Ai4bio-alpa3: │   495 │   │   │   │   nvcc_args.append("-DBF16_AVAILABLE")                   │
+Ai4bio-alpa3: │   496 │   │                                                                  │
+Ai4bio-alpa3: │ ❱ 497 │   │   op_module = load(name=self.name,                               │
+Ai4bio-alpa3: │   498 │   │   │   │   │   │    sources=self.strip_empty_entries(sources),    │
+Ai4bio-alpa3: │   499 │   │   │   │   │   │    extra_include_paths=self.strip_empty_entries( │
+Ai4bio-alpa3: │   500 │   │   │   │   │   │    extra_cflags=cxx_args,                        │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa3: │ p_extension.py:1284 in load                                                  │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1281 │   │   ...     extra_cflags=['-O2'],                                 │
+Ai4bio-alpa3: │   1282 │   │   ...     verbose=True)                                         │
+Ai4bio-alpa3: │   1283 │   '''                                                               │
+Ai4bio-alpa3: │ ❱ 1284 │   return _jit_compile(                                              │
+Ai4bio-alpa3: │   1285 │   │   name,                                                         │
+Ai4bio-alpa3: │   1286 │   │   [sources] if isinstance(sources, str) else sources,           │
+Ai4bio-alpa3: │   1287 │   │   extra_cflags,                                                 │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa3: │ p_extension.py:1508 in _jit_compile                                          │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1505 │   │   │   │   │   │                                                 │
+Ai4bio-alpa3: │   1506 │   │   │   │   │   │   sources = list(hipified_sources)              │
+Ai4bio-alpa3: │   1507 │   │   │   │   │                                                     │
+Ai4bio-alpa3: │ ❱ 1508 │   │   │   │   │   _write_ninja_file_and_build_library(              │
+Ai4bio-alpa3: │   1509 │   │   │   │   │   │   name=name,                                    │
+Ai4bio-alpa3: │   1510 │   │   │   │   │   │   sources=sources,                              │
+Ai4bio-alpa3: │   1511 │   │   │   │   │   │   extra_cflags=extra_cflags or [],              │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa3: │ p_extension.py:1600 in _write_ninja_file_and_build_library                   │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1597 │   get_compiler_abi_compatibility_and_version(compiler)              │
+Ai4bio-alpa3: │   1598 │   if with_cuda is None:                                             │
+Ai4bio-alpa3: │   1599 │   │   with_cuda = any(map(_is_cuda_file, sources))                  │
+Ai4bio-alpa3: │ ❱ 1600 │   extra_ldflags = _prepare_ldflags(                                 │
+Ai4bio-alpa3: │   1601 │   │   extra_ldflags or [],                                          │
+Ai4bio-alpa3: │   1602 │   │   with_cuda,                                                    │
+Ai4bio-alpa3: │   1603 │   │   verbose,                                                      │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa3: │ p_extension.py:1709 in _prepare_ldflags                                      │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   1706 │   │   │   if CUDNN_HOME is not None:                                │
+Ai4bio-alpa3: │   1707 │   │   │   │   extra_ldflags.append(os.path.join(CUDNN_HOME, "lib",  │
+Ai4bio-alpa3: │   1708 │   │   elif not IS_HIP_EXTENSION:                                    │
+Ai4bio-alpa3: │ ❱ 1709 │   │   │   extra_ldflags.append(f'-L{_join_cuda_home("lib64")}')     │
+Ai4bio-alpa3: │   1710 │   │   │   extra_ldflags.append('-lcudart')                          │
+Ai4bio-alpa3: │   1711 │   │   │   if CUDNN_HOME is not None:                                │
+Ai4bio-alpa3: │   1712 │   │   │   │   extra_ldflags.append(f'-L{os.path.join(CUDNN_HOME, "l │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │ /home/chong.tian/.conda/envs/med/lib/python3.10/site-packages/torch/utils/cp │
+Ai4bio-alpa3: │ p_extension.py:2231 in _join_cuda_home                                       │
+Ai4bio-alpa3: │                                                                              │
+Ai4bio-alpa3: │   2228 │   only once we need to get any CUDA-specific path.                  │
+Ai4bio-alpa3: │   2229 │   '''                                                               │
+Ai4bio-alpa3: │   2230 │   if CUDA_HOME is None:                                             │
+Ai4bio-alpa3: │ ❱ 2231 │   │   raise EnvironmentError('CUDA_HOME environment variable is not │
+Ai4bio-alpa3: │   2232 │   │   │   │   │   │   │      'Please set it to your CUDA install ro │
+Ai4bio-alpa3: │   2233 │   return os.path.join(CUDA_HOME, *paths)                            │
+Ai4bio-alpa3: │   2234                                                                       │
+Ai4bio-alpa3: ╰──────────────────────────────────────────────────────────────────────────────╯
+Ai4bio-alpa3: OSError: CUDA_HOME environment variable is not set. Please set it to your CUDA 
+Ai4bio-alpa3: install root.
+Ai4bio-alpa2: Loading extension module fused_adam...
+Ai4bio-alpa2: Loading extension module fused_adam...
+Ai4bio-alpa2: [2023-06-03 05:52:16,577] [INFO] [launch.py:314:sigkill_handler] Killing subprocess 1793484
+Ai4bio-alpa2: [2023-06-03 05:52:16,577] [INFO] [launch.py:314:sigkill_handler] Killing subprocess 1793485
+Ai4bio-alpa3: [2023-06-03 05:52:16,590] [INFO] [launch.py:314:sigkill_handler] Killing subprocess 3874879
+Ai4bio-alpa3: [2023-06-03 05:52:16,628] [INFO] [launch.py:314:sigkill_handler] Killing subprocess 3874880
+Ai4bio-alpa3: [2023-06-03 05:52:16,651] [INFO] [launch.py:314:sigkill_handler] Killing subprocess 3874881
+Ai4bio-alpa3: [2023-06-03 05:52:16,673] [INFO] [launch.py:314:sigkill_handler] Killing subprocess 3874882
+Ai4bio-alpa3: [2023-06-03 05:52:16,673] [ERROR] [launch.py:320:sigkill_handler] ['/home/chong.tian/.conda/envs/med/bin/python', '-u', 'fastchat/train/train_mem.py', '--local_rank=3', '--model_name_or_path', 'eachadea/vicuna-13b-1.1', '--data_path', './medVicuna.json', '--bf16', 'True', '--output_dir', 'output_medvicuna_13b/', '--num_train_epochs', '5', '--per_device_train_batch_size', '1', '--per_device_eval_batch_size', '32', '--gradient_accumulation_steps', '32', '--save_strategy', 'epoch', '--save_total_limit', '10', '--learning_rate', '2e-5', '--weight_decay', '0.', '--warmup_ratio', '0.04', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--model_max_length', '1024', '--gradient_checkpointing', 'True', '--lazy_preprocess', 'True', '--deepspeed', './configs/default_offload_opt_param.json', '--tf32', 'True'] exits with return code = 1
+Ai4bio-alpa2: [2023-06-03 05:52:16,911] [INFO] [launch.py:314:sigkill_handler] Killing subprocess 1793486
+Ai4bio-alpa2: [2023-06-03 05:52:16,942] [INFO] [launch.py:314:sigkill_handler] Killing subprocess 1793487
+pdsh@Ai4bio-alpa2: Ai4bio-alpa3: ssh exited with exit code 1
+Ai4bio-alpa2: [2023-06-03 05:52:17,301] [ERROR] [launch.py:320:sigkill_handler] ['/home/chong.tian/.conda/envs/med/bin/python', '-u', 'fastchat/train/train_mem.py', '--local_rank=3', '--model_name_or_path', 'eachadea/vicuna-13b-1.1', '--data_path', './medVicuna.json', '--bf16', 'True', '--output_dir', 'output_medvicuna_13b/', '--num_train_epochs', '5', '--per_device_train_batch_size', '1', '--per_device_eval_batch_size', '32', '--gradient_accumulation_steps', '32', '--save_strategy', 'epoch', '--save_total_limit', '10', '--learning_rate', '2e-5', '--weight_decay', '0.', '--warmup_ratio', '0.04', '--lr_scheduler_type', 'cosine', '--logging_steps', '1', '--model_max_length', '1024', '--gradient_checkpointing', 'True', '--lazy_preprocess', 'True', '--deepspeed', './configs/default_offload_opt_param.json', '--tf32', 'True'] exits with return code = 1
+pdsh@Ai4bio-alpa2: Ai4bio-alpa2: ssh exited with exit code 1

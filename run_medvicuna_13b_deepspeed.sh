@@ -1,15 +1,15 @@
-source /home/hongyiwa/.bashrc     ######
+# source /home/hongyiwa/.bashrc     ######[]
 
-nvidia-smi
+# nvidia-smi
 
-cd /l/users/hongyiwa/guoheng.sun/MedVicuna     ######
+# cd /l/users/hongyiwa/guoheng.sun/MedVicuna     ######
 
-wget https://huggingface.co/datasets/s1ghhh/MedVicuna/resolve/main/medVicuna.json
+# wget https://huggingface.co/datasets/s1ghhh/MedVicuna/resolve/main/medVicuna.json
 
-conda activate fschat
+# conda activate fschat
 
-deepspeed --num_gpus 4 --num_nodes 2 --hostfile hostfile \
-    --master_addr hostname1######## --master_port=20001 \
+deepspeed --num_gpus 4 --num_nodes 2 --hostfile /home/chong.tian/code/MedVicuna/hostfile \
+    --master_addr Ai4bio-alpa2 --master_port=20002 \
     fastchat/train/train_mem.py \
     --model_name_or_path eachadea/vicuna-13b-1.1  \
     --data_path ./medVicuna.json \

@@ -10,32 +10,33 @@
 
 
 
-source /home/hongyiwa/.bashrc     ######
+# source /home/hongyiwa/.bashrc     ######
 
-nvidia-smi
+# nvidia-smi
 
-cd /l/users/hongyiwa/guoheng.sun/MedVicuna     ######
+# cd /l/users/hongyiwa/guoheng.sun/MedVicuna     ######
 
-wget https://huggingface.co/datasets/s1ghhh/MedVicuna/resolve/main/medVicuna.json
+# wget https://huggingface.co/datasets/s1ghhh/MedVicuna/resolve/main/medVicuna.json
 
-conda activate fschat
+# conda activate med
 
-export WANDB_MODE=offline
+# export WANDB_MODE=offline
 
-nodes=( $( scontrol show hostnames $SLURM_JOB_NODELIST ) )
-nodes_array=($nodes)
-head_node=${nodes_array[0]}
-head_node_ip=$(srun --nodes=1 --ntasks=1 -w "$head_node" hostname --ip-address)
-​
-echo Node IP: $head_node_ip
-export LOGLEVEL=INFO
-​
-srun torchrun \
+# nodes=( $( scontrol show hostnames $SLURM_JOB_NODELIST ) )
+# nodes_array=($nodes)
+# head_node=${nodes_array[0]}
+# head_node_ip=$(srun --nodes=1 --ntasks=1 -w "$head_node" hostname --ip-address)
+# # ​
+# echo Node IP: $head_node_ip
+# export LOGLEVEL=INFO
+# # ​
+# srun 
+torchrun \
     --nnodes 2 \
     --nproc_per_node 4 \
-    --rdzv_id $RANDOM \
+    --rdzv_id 1 \
     --rdzv_backend c10d \
-    --rdzv_endpoint $head_node_ip:20001 \
+    --rdzv_endpoint Ai4bio-alpa2:20001 \
     fastchat/train/train_mem.py \
     --model_name_or_path eachadea/vicuna-13b-1.1  \
     --data_path ./medVicuna.json \
@@ -56,4 +57,5 @@ srun torchrun \
     --gradient_checkpointing True \
     --lazy_preprocess True\
     --deepspeed "./configs/default_offload_opt_param.json"\
-    --tf32 True &>>"./medvicuna_13b.log"
+    --tf32 True
+    #  &>>"./medvicuna_13b.log"
