@@ -9,7 +9,7 @@
   - ```conda install cuda -c nvidia/label/cuda-11.7.0```
 
 * torch
-  - ```pip install torch==1.13.1+cu117 torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116```
+  - ```pip install torch==1.13.1+cu117 torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu117```
 
 * pip
   - ```pip install -r requirements.txt``` 
